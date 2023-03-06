@@ -1,0 +1,23 @@
+body {
+    background-color :yellowgreen
+}
+section {
+    max-width: 85%;
+    background-color: wheat;
+    margin: auto;
+}
+.post {
+    padding: 120 px;
+}
+.post_left {
+    float: left;
+    width: 70%;
+}
+.post_right {
+ float:right;
+ width :70%;
+ background-color: aliceblue;
+}
+.clearfix {
+    clear: both;
+}
