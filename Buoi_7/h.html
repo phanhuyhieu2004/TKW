@@ -1,10 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Comments Section</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+<!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="manager.css">
 </head>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    *{
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    body{
+        background: rgb(219, 219, 219);
+    }
+
+    .container{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Side menubar section */
+    nav{
+        background: #fff;
+    }
+    .side_navbar {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+
+    }
+
+
+    .side_navbar a {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-weight: 500;
+        font-size: 15px;
+
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+
+
+    .search-filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+
+    select {
+        border: 0;
+        outline: 0;
+        font: inherit;
+        width: 20em;
+        height: 3em;
+        padding: 0 4em 0 1em;
+        border-radius: 0.25em;
+        margin: 20px;
+        background-color: violet;
+    }
+
+    .search-filter button.search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 5px;
+        outline: 0;
+        font: inherit;
+        background-color: hotpink;
+        height: 3em;
+        min-width: 80px;
+        cursor: pointer;
+    }
+    .side_navbar a img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .side_navbar a:hover {
+        background: deeppink;
+    }
+
+    .side_navbar .active {
+        border-left: 2px solid #646464;
+    }
+
+    /* Main Body Section */
+    .main-body{
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .table-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+
+
+
+
+    table th{
+        font-size: 15px;
+    }
+    table td{
+        font-size: 13px;
+        color: rgb(100, 100, 100);
+    }
+
+
+    .menu-text {
+        margin-left: 10px;
+    }
+
+    .block-btn {
+        background-color: #cf3a35; /* Màu đỏ */
+        border: none;
+        border-radius: 5px;
+        color: #fff; /* Màu chữ trắng */
+        font-size: 10px;
+        font-weight: bold;
+        padding: 8px 16px;
+        text-transform: uppercase; /* Chữ in hoa */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+        transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+
+    }
+    .sticky-row {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+    }
+    .block-btn:hover {
+        background-color: #e74b48; /* Màu đỏ sáng */
+        cursor: pointer;
+        box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5); /* Hiệu ứng đổ bóng lớn hơn */
+    }
+
+    table {
+        background: papayawhip;
+        padding: 1rem;
+        text-align: left;
+
+        border: 5px solid deeppink;
+        width: 500px;
+        height: 70%;
+        margin-right: 40px;
+        margin-left: 30px;
+
+    }
+
+    table td, th {
+        padding: 0.2rem 0.8rem;
+        border-bottom: 1px solid deeppink;
+        border-right: 1px solid deeppink;
+    }
+
+    table th {
+        font-size: 15px;
+    }
+
+    table td {
+        font-size: 15px;
+    }
+
+
+    .side_navbar {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+
+    .container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+</style>
+
+
 <body>
-$END$
+
+<div class="container">
+
+    <div class="main-body" style="margin-right: 130px">
+
+        <center><p>You can filter the list and account status here</p></center>
+
+
+        <div class="table info">
+            <table id="dynamicTable" >
+                <thead>
+                <tr class="sticky-row">
+                    <th>STT</th>
+                    <th>Nick Name</th>
+                    <th>Account Name</th>
+                    <th style="text-align: center">Email</th>
+                    <th>Phone Number</th>
+                    <th>Identify Card</th>
+                    <th>Status</th>
+
+                    <th style="text-align: center">Block</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>1234567890</td>
+                    <td>ABC123</td><td>ABC123</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>0987654321</td>
+                    <td>DEF456</td>
+                    <td>DEF456</td>
+                    <td>Inactive</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>David Johnson</td>
+                    <td>david.johnson@example.com</td>
+                    <td>9876543210</td>
+                    <td>GHI789</td>
+                    <td>GHI789</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sarah Wilson</td>
+                    <td>sarah.wilson@example.com</td>
+                    <td>0123456789</td>
+                    <td>JKL012</td>
+                    <td>JKL012</td>
+                    <td>Inactive</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Michael Brown</td>
+                    <td>michael.brown@example.com</td>
+                    <td>9876543210</td>
+                    <td>MNO345</td>
+                    <td>MNO345</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Emily Davis</td>
+                    <td>emily.davis@example.com</td>
+                    <td>0123456789</td>
+                    <td>PQR678</td>
+                    <td>PQR678</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Christopher Martinez</td>
+                    <td>christopher.martinez@example.com</td>
+                    <td>9876543210</td>
+                    <td>STU901</td>
+                    <td>STU901</td>
+                    <td>Inactive</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Amy Thompson</td>
+                    <td>amy.thompson@example.com</td>
+                    <td>0123456789</td>
+                    <td>VWX234</td>
+                    <td>VWX234</td>
+                    <td>Inactive</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>William Lee</td>
+                    <td>william.lee@example.com</td>
+                    <td>9876543210</td>
+                    <td>YZA567</td>
+                    <td>YZA567</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr> <tr>
+                    <td>10</td>
+                    <td>Olivia Clark</td>
+                    <td>olivia.clark@example.com</td>
+                    <td>0123456789</td>
+                    <td>BCD890</td>
+                    <td>BCD890</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="block-btn">Block</button>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
 </body>
+
 </html>

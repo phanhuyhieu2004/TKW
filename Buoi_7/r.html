@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <style>
+        /* CSS cho phần header */
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* CSS cho sản phẩm */
+        .product {
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .product .product-info {
+            flex: 1;
+        }
+
+        .product .product-info h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .product .product-info .price {
+            font-size: 16px;
+            color: #ff0000;
+        }
+
+        .product .product-info .original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .product .product-info .new-tag {
+            font-size: 12px;
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
-$END$
+<header>
+    <h1>DANH SÁCH SẢN PHẨM</h1>
+</header>
+<div class="product">
+    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpthgujac6aaee" alt="Sản phẩm 1">
+    <div class="product-info">
+        <h3>Sản phẩm 1</h3>
+        <span class="price">350.000 ₫</span>
+        <span class="original-price">400.000 ₫</span>
+        <span class="new-tag">NEW</span>
+    </div>
+</div>
+<!-- Thêm các sản phẩm khác tương tự -->
 </body>
 </html>
