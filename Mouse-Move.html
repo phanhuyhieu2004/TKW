@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bubblegum:wght@400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+    body{
+        overflow: hidden;
+        background: black;
+        height:100vh;
+
+    }
+    .container{
+        font-family: 'Bubblegum Sans',cursive;
+        color: whitesmoke;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 50px;
+        cursor: pointer;
+    }
+    span{
+        height:50px;
+        width:50px;
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        background: linear-gradient(45deg,#7380ec,#ffa3ff);
+        transform: translate(-50%,-50%);
+        box-shadow: 0rem 0rem;
+        animation: animate 4s linear infinite;
+
+
+    }
+    @keyframes animate {
+        0%{
+            transform: translate(-50%,-50%);
+            opacity: 1;
+            filter: hue-rotate(0deg);
+        }
+        100%{
+            transform: translate(-50%,-1000%);
+            opacity: 1;
+            filter: hue-rotate(720deg);
+        }
+    }
+</style>
+<body>
+<div class="container">Cursor Moving Bubbles</div>
+<script>
+    document.addEventListener("mousemove",function (e){
+        let body=document.querySelector("body");
+        let circle=document.createElement("span");
+        let x=e.offsetX;
+        let y=e.offsetY;
+        circle.style.left=x+"px";
+        circle.style.top=y+"px";
+        let size=Math.random() * 50;
+        circle.style.width=10+size+"px";
+        circle.style.height=10+size+"px";
+        body.appendChild(circle);
+        setTimeout(function (){
+            circle.remove();
+        },1800);
+    });
+</script>
+</body>
+
+</html>

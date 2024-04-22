@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MeTube</title>
+    <link rel="stylesheet" href="list5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- == icon == -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <!-- == css == -->
+    <!--    <link rel="stylesheet" href="css/single.css">-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+          rel="stylesheet">
+    <link type="images/png" rel="icon" href="images/Screenshot%202024-04-10%20193643.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" />
+
+
+</head>
+<body>
+
+<!--    header      -->
+<header class="header">
+    <div class="header_container">
+        <h2> <span class="logo_name">
+                    <img src="images/Screenshot%202024-04-10%20193643.png" alt="">
+            <!--                <img src="images/sex-position.png" alt="" style="max-width: 20%"-->
+            <!--                >-->
+               MeTube
+             </span></h2>
+        <div class="none"> </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="user">
+            <div class="icon">
+
+                <div class="theme-toggle">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <i class="fa-solid fa-video"></i>
+
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="img" style="        position: relative;
+">
+                <img src="images/logo.png" alt="">
+                <ul class="profile-link">
+                    <li><a href="#"> <i class="fa-solid fa-gear"></i> Setting</a></li>
+                    <li><a href="#"> <i class="fa-solid fa-circle-info"></i> Support</a></li>
+                    <li><a href="#"> <i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="toggle">
+            <i class="fa-solid fa-bars" id="header-toggle"></i>
+        </div>
+    </div>
+</header>
+<!--    header      -->
+
+
+<!--    nav      -->
+<section class="nav" id="navbar">
+    <nav class="nav_container">
+        <div>
+            <a href="#" class="nav_link nav_logo ">
+                <i class="fa-solid fa-bars nav_icon"></i>
+                <h2> <span class="logo_name">
+                    <img src="images/Screenshot%202024-04-10%20193643.png" alt="">
+                    <!--                <img src="images/sex-position.png" alt="" style="max-width: 20%"-->
+                    <!--                >-->
+MeTube             </span></h2>
+            </a>
+
+            <div class="nav_list">
+                <div class="nav_items navtop">
+                    <a href="List3.html" class="nav_link navtop ">
+                        <i class="fa-solid fa-video nav_icon "></i>
+                        <span class="nav_name">Home</span>
+                    </a>
+                    <a href="List4.html" class="nav_link navtop active">
+                        <i class="fa-solid fa-list nav_icon"></i>
+                        <span class="nav_name">Category</span>
+                    </a>
+                    <a href="List1" class="nav_link navtop">
+                        <i class="fa-brands fa-youtube nav_icon"></i>
+                        <span class="nav_name">Videos</span>
+                    </a>
+                    <a href="#" class="nav_link navtop">
+                        <i class="fa-solid fa-user nav_icon"></i>
+                        <span class="nav_name">Accounts</span>
+                    </a>
+                    <a href="List2.html" class="nav_link navtop">
+                        <i class="fa-solid fa-video nav_icon"></i>
+                        <span class="nav_name">Library</span>
+                    </a>
+                    <a href="#" class="nav_link navtop">
+                        <i class="fa-solid fa-clock-rotate-left nav_icon"></i>
+                        <span class="nav_name">History</span>
+                    </a>
+                    <a href="#" class="nav_link navtop">
+                        <i class="fa-solid fa-thumbs-up nav_icon"></i>
+                        <span class="nav_name">Like</span>
+                    </a>
+
+                    <div class="nav_dropdown">
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-chevron-down nav_icon"></i>
+                            <span class="nav_name">Show More</span>
+                        </a>
+
+                        <div class="nav_dropdown-collapse">
+                            <div class="nav_dropdown-content">
+                                <a href="#" class="nav_dropdown-item">Grid Box</a>
+                                <a href="#" class="nav_dropdown-item">Frontend Design</a>
+                                <a href="#" class="nav_dropdown-item">Backend Design</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="nav_link">
+                        <i class="fa-solid fa-comment nav_icon"></i>
+                        <span class="nav_name">Messages</span>
+                    </a>
+                </div>
+
+                <div class="nav_items subscribe-container">
+                    <h3 class="nav_subititle">SUBSCRIPTIONS</h3>
+
+                    <a href="#" class="nav_link">
+                        <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-people-victoruler-flat-victoruler-5.png" alt="">
+                        <span class="nav_name">Ngọc Trinh</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-occupation-and-people-victoruler-flat-victoruler.png" />
+                        <span class="nav_name">Lê Bống</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <img class="subscribe" src="https://img.icons8.com/external-victoruler-linear-colour-victoruler/64/000000/external-boy-children-avatar-victoruler-linear-colour-victoruler-2.png" />
+                        <span class="nav_name">Maria</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-children-avatar-victoruler-flat-victoruler-12.png" />
+                        <span class="nav_name">Thúy Liễu</span>
+                    </a>
+
+
+                    <div class="nav_dropdown">
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-chevron-down nav_icon"></i>
+                            <span class="nav_name">Show 3 More</span>
+                        </a>
+
+                        <div class="nav_dropdown-collapse nav_dropdown-second">
+                            <div class="nav_dropdown-content">
+                                <a href="#" class="nav_dropdown-items">
+                                    <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-children-avatar-victoruler-flat-victoruler-12.png" />
+                                    <span class="nav_name">Thúy Liễu</span>
+                                </a>
+                                <a href="#" class="nav_dropdown-items">
+                                    <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-children-avatar-victoruler-flat-victoruler-12.png" />
+                                    <span class="nav_name">Thúy Kiều</span>
+                                </a>
+                                <a href="#" class="nav_dropdown-items">
+                                    <img class="subscribe" src="https://img.icons8.com/external-victoruler-flat-victoruler/64/000000/external-boy-children-avatar-victoruler-flat-victoruler-12.png" />
+                                    <span class="nav_name">Ngọc Nữ</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<main class="single_pages">
+    <section class="video_items flex">
+        <div class="left">
+            <div class="left_content">
+                <form>
+                    <div class="filter" style="display: flex">
+<!--                        <div class="date">-->
+<!--                            <input type="date">-->
+<!--                        </div>-->
+                        <div class="search">
+                            <input type="text" placeholder="Search" style="background: transparent;color: var(--color-dark);">
+                        </div>
+<!--                        <div class="custom-select">-->
+<!--                            <select>-->
+<!--                                <option value="fb">Facebook</option>-->
+<!--                                <option value="tw">Twitter</option>-->
+<!--                                <option value="ig">Instagram</option>-->
+<!--                            </select>-->
+<!--                            <div class="select-icon">-->
+<!--                                <i class="fa-solid fa-caret-down"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="item add-product">
+                            <div>
+                                <span class="material-icons-sharp">add</span>
+                                <p>Add Product</p>
+                            </div>
+                        </div>
+                        <button type="submit" value="button">                    <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="recent-orders">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>SĐT</th>
+
+                            <th>Action</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>SĐT</td>
+                            <td style="display: flex"><a href=""><i class="fa-solid fa-pen-to-square"></i></a><a href=""><i class="fa-solid fa-pen-to-square"></i></a><a href=""><i class="fa-solid fa-pen-to-square"></i></a><a href=""><i class="fa-solid fa-pen-to-square"></i></a> </td>
+
+                        </tr> <tr>
+                            <td>Name</td>
+                            <td>SĐT</td>
+                            <td>Address</td>
+
+                        </tr> <tr>
+                            <td>Name</td>
+                            <td>SĐT</td>
+                            <td>Address</td>
+
+                        </tr> <tr>
+                            <td>Name</td>
+                            <td>SĐT</td>
+                            <td>Address</td>
+
+                        </tr> <tr>
+                            <td>Name</td>
+                            <td>SĐT</td>
+                            <td>Address</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="prev">&laquo; Previous</a>
+                    <a href="#" class="page active">1</a>
+                    <a href="#" class="page">2</a>
+                    <a href="#" class="page">3</a>
+                    <a href="#" class="next">Next &raquo;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="right_content">
+                <div class="recent-updates">
+                    <div class="updates">
+                        <div class="update">
+                            <div class="profile-photo">
+                                <img src="images/profile-2%20-%20Copy.jpg"class="account">
+
+                            </div>
+                            <div class="message">
+                                <p><b>Mike Tyson</b> : just posted a new video on the channel</p>
+                                <small class="text-muted">2 Minutes</small>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="profile-photo">
+                                <img src="images/profile-3.jpg" class="account">
+
+                            </div>
+                            <div class="message">
+                                <p><b>Mike Tyson</b> : just posted a new video on the channel</p>
+                                <small class="text-muted">2 Minutes</small>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="profile-photo">
+                                <img src="images/profile-4.jpg"class="account">
+
+                            </div>
+                            <div class="message">
+                                <p><b>Mike Tyson</b> : just posted a new video on the channel</p>
+                                <small class="text-muted">2 Minutes</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="col1">
+            <a href="#" class="brand">Connect with us </a>
+            <ul class="media-icons">
+                <li>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col2">
+            <ul class="menu">
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde obcaecati iusto velit labore consequuntur officiis aut neque?</p>
+            </ul>
+        </div>
+        <div class="col3">
+            <p>Subscribe to our videos</p>
+            <form>
+                <div class="input-wrap">
+                    <input type="email" placeholder="ex@gmail.com" /><button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </form>
+            <ul class="services-icons">
+                <li>
+                    <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-cc-apple-pay"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-cc-amazon-pay"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="mekk">
+            <p>@MeTube 2024 - All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="list1.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

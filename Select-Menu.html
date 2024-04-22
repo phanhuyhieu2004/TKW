@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #8460ed, #ff1252);
+    }
+
+    .select-menu {
+        width: 380px;
+        margin: 150px auto;
+    }
+
+    .select-menu .select-btn {
+        position: relative;
+        top: -140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 55px;
+        background: white;
+        color: black;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    }
+
+    .select-btn .icon-arrow {
+        font-size: 25px;
+        transition: 1s;
+    }
+    .select-btn.active .icon-arrow{
+        transform: rotate(180deg);
+    }
+
+    .select-menu .list {
+        position: absolute;
+        width: 380px;
+        transform: translateY(-140px);
+        margin-top: 10px;
+    }
+
+    .list .option {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 55px;
+        background: white;
+        padding: 0 16px;
+        cursor: pointer;
+        transform-origin: top;
+        opacity: 0;
+        transform: scale(0) translateY(-65px);
+        margin-bottom: -55px;
+        transition: opacity .5s ease-in-out,transform .5s ease-in-out,margin-bottom .2s ease-in-out;
+        transition-delay: calc(.1s * var(--i));
+
+    }
+    .select-btn.active~.list .option{
+        opacity: 1;
+        transition: opacity 1s ease-in-out,transform .5s ease-in-out,margin-bottom .5s ease-in-out;
+        transition-delay: calc(.1s * var(--i));
+        transform: scale(1) translateY(0);
+        margin-bottom: 0;
+    }
+
+    .list .option:hover {
+        background: pink;
+
+    }
+
+    .list .option:nth-child(1) {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .list .option:nth-child(5) {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .option .icon {
+        font-size: 25px;
+        margin-right: 12px;
+    }
+
+    .option .option-text {
+        font-size: 18px;
+        color: #333333;
+    }
+
+</style>
+<body>
+<div class="select-menu">
+    <div class="select-btn" id="select-btn">
+        <span id="text">Dropdown Select</span>
+        <ion-icon name="chevron-down-outline" class="icon-arrow"></ion-icon>
+    </div>
+    <ul class="list">
+        <li class="option" style="--i:5;">
+            <ion-icon name="bag-check-outline" class="icon"></ion-icon>
+            <span class="option-text">HTML</span>
+        </li>
+        <li class="option" style="--i:4;">
+            <ion-icon name="bag-check-outline" class="icon"></ion-icon>
+            <span class="option-text">llk</span>
+        </li>
+        <li class="option" style="--i:3">
+            <ion-icon name="bag-check-outline" class="icon"></ion-icon>
+            <span class="option-text">jooj</span>
+        </li>
+        <li class="option" style="--i:2;">
+            <ion-icon name="bag-check-outline" class="icon"></ion-icon>
+            <span class="option-text">lkjio</span>
+        </li>
+        <li class="option" style="--i:1;">
+            <ion-icon name="bag-check-outline" class="icon"></ion-icon>
+            <span class="option-text">lk</span>
+        </li>
+    </ul>
+</div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const selectBtn=document.getElementById('select-btn');
+    const text=document.getElementById('text');
+    const option=document.getElementsByClassName('option');
+    selectBtn.addEventListener('click',function (){
+        selectBtn.classList.toggle('active');
+    });
+    for (options of option) {
+        options.onclick=function (){
+            text.innerHTML=this.textContent;
+            selectBtn.classList.remove('active');
+
+        }
+
+    }
+</script>
+</body>
+</html>

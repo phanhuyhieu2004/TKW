@@ -255,8 +255,8 @@ header .toggle {
 }
 
 .video_items a img {
-  width: 300px;
-  height: 300px;
+  width: 295px;
+  height: 170px;
   object-fit: cover;
 }
 
@@ -277,10 +277,7 @@ header .toggle {
   height: 100%;
   object-fit: cover;
 }
-/*.d{*/
-/*  background-image: url('https://cly.1cdn.vn/2022/04/02/s1.media.ngoisao.vn-resize_660-news-2022-04-02-_ngan-98-lai-phan-cam-tot-do-tren-song-livestream-dien-bikini-nho-xiu-lai-con-uon-eo-bat-chap-chuyen-ho-henh-1-ngoisaovn-w903-h1231.jpg');*/
-/*  background-size: cover;*/
-/*}*/
+
 .video_items .heading {
   width: 80%;
   color: #fff;

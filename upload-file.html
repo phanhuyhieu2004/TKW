@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .bt-upload-img-single .img-upload-box {
+            display: flex;
+            border: 2px dashed #307dca;
+            border-radius: 20px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            padding-top: 50%;
+            cursor: pointer;
+        }
+        .bt-upload-img-single .img-upload-box.error {
+            border-color: #f00;
+        }
+        .bt-upload-img-single .img-upload-box.isDragover {
+            border-style: solid;
+            background-color: rgba(0, 0, 0, 0.05);
+            transition: all 0.3s linear;
+        }
+        .bt-upload-img-single .img-upload-box.isPreview {
+            background-color: #3d4852;
+            border: none;
+        }
+        .bt-upload-img-single .img-upload-box.isPreview .img-initial {
+            display: none;
+        }
+        .bt-upload-img-single .img-upload-box.isPreview:hover .img-options {
+            z-index: 20;
+            opacity: 1;
+            visibility: visible;
+        }
+        .bt-upload-img-single .img-upload-box.isProgress {
+            border: 2px solid #ebebeb;
+            background-color: transparent;
+            pointer-events: none;
+        }
+        .bt-upload-img-single .img-upload-box.isProgress .progress-upload-overlay {
+            display: flex;
+        }
+        .bt-upload-img-single .img-upload-box.isProgress .img-options {
+            display: none;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-initial {
+            text-align: center;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-initial img {
+            display: inline-block;
+            width: 15%;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-initial h3 {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview {
+            width: 100%;
+            height: 100%;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview .img-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            z-index: 1;
+            display: grid;
+            background-blend-mode: multiply;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.4) 29%, transparent);
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview .img-info > div {
+            margin-top: auto;
+            padding: 10px 15px 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview .img-info > div h3 {
+            line-height: 1;
+            color: #f5f5f5;
+            font-size: 14px;
+            font-weight: bold;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview .img-info > div span {
+            color: #c3c3c3;
+            font-size: 12px;
+        }
+        .bt-upload-img-single .img-upload-box .img-inner .img-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .bt-upload-img-single .img-upload-box .progress-upload-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        .bt-upload-img-single .img-upload-box .progress-upload-overlay h4 {
+            position: absolute;
+            margin-top: -40px;
+            color: #696969;
+        }
+        .bt-upload-img-single .img-upload-box .progress-upload-bar {
+            position: relative;
+            width: 90%;
+            height: 5px;
+            background-color: #ebebeb;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        .bt-upload-img-single .img-upload-box .progress-upload-bar span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #307dca;
+        }
+        .bt-upload-img-single .img-upload-box .img-options {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.45);
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+            transition: all 0.3s linear;
+        }
+        .bt-upload-img-single .img-upload-box .img-options svg {
+            width: 50px;
+            height: 50px;
+        }
+        .bt-upload-img-single .img-upload-box .img-options svg path {
+            fill: white;
+        }
+        .bt-upload-img-single button {
+            margin-top: 20px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            background-color: #307dca;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+        }
+        .bt-upload-img-single button:hover {
+            opacity: 0.6;
+        }
+        .bt-upload-img-single button.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+<div class="bt-upload-img-single" id="bt-upload-singleImg">
+    <div class="img-upload-box">
+        <div class="img-inner">
+            <div class="img-initial">
+                <img src="https://i.ibb.co/5cQkzZN/img-upload.png" alt="ảnh" />
+                <h3>Kéo thả hoặc click vào để tải ảnh lên</h3>
+            </div>
+        </div>
+        <input
+                type="file"
+                id="singleImg"
+                name="singleImg"
+                accept="image/*"
+                hidden
+        />
+        <div class="progress-upload-overlay">
+            <h4 class="progress-upload-text">Uploading... <span>0%</span></h4>
+            <div class="progress-upload-bar">
+                <span></span>
+            </div>
+        </div>
+        <div class="img-options">
+            <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="delete-icon"
+            >
+                <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.23918 13.1961C3.11542 12.5773 3.58871 11.9999 4.21976 11.9999H19.7802C20.4112 11.9999 20.8845 12.5773 20.7607 13.1961L19.4823 19.5883C19.2018 20.9906 17.9706 21.9999 16.5405 21.9999H7.45937C6.02933 21.9999 4.79808 20.9906 4.51763 19.5883L3.23918 13.1961ZM13 14.9999C13 14.4477 13.4477 13.9999 14 13.9999C14.5523 13.9999 15 14.4477 15 14.9999V18.9999C15 19.5522 14.5523 19.9999 14 19.9999C13.4477 19.9999 13 19.5522 13 18.9999V14.9999ZM9.99999 13.9999C9.4477 13.9999 8.99999 14.4477 8.99999 14.9999V18.9999C8.99999 19.5522 9.4477 19.9999 9.99999 19.9999C10.5523 19.9999 11 19.5522 11 18.9999V14.9999C11 14.4477 10.5523 13.9999 9.99999 13.9999Z"
+                        fill="white"
+                />
+                <path
+                        d="M2 9C2 8.44772 2.44772 8 3 8H21C21.5523 8 22 8.44772 22 9C22 9.55228 21.5523 10 21 10H3C2.44772 10 2 9.55228 2 9Z"
+                        fill="white"
+                />
+                <path
+                        d="M10.7071 3.70711C11.0976 3.31658 11.0976 2.68342 10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L7.29289 4.29289C6.90237 4.68342 6.90237 5.31658 7.29289 5.70711C7.68342 6.09763 8.31658 6.09763 8.70711 5.70711L10.7071 3.70711Z"
+                        fill="white"
+                />
+                <path
+                        d="M13.2929 3.70711C12.9024 3.31658 12.9024 2.68342 13.2929 2.29289C13.6834 1.90237 14.3166 1.90237 14.7071 2.29289L16.7071 4.29289C17.0976 4.68342 17.0976 5.31658 16.7071 5.70711C16.3166 6.09763 15.6834 6.09763 15.2929 5.70711L13.2929 3.70711Z"
+                        fill="white"
+                />
+            </svg>
+        </div>
+    </div>
+    <button>Tải lên</button>
+</div>
+<script>
+    class ImageSingleService extends FileControl {
+        // ...
+
+        #handleChange(e) {
+            const innerEl = this.#getSelector(".img-inner");
+            const boxEl = this.#boxImgEl;
+            const file = e.target?.files[0];
+            function imgPreviewHtml({ url, title, size }) {
+                return `<div class="img-preview">
+                <div class="img-info">
+                    <div>
+                        <h3>${title}</h3>
+                        <span>${size}</span>
+                    </div>
+                </div>
+                <img src=${url} />
+            </div>`;
+            }
+            if (file) {
+                const fileTitle = file.name || "Ảnh tải lên";
+                const fileSize = this.gettingSizeFile(file.size);
+                if (this.#urlPreview) {
+                    URL.revokeObjectURL(this.#urlPreview);
+                }
+                this.#urlPreview = URL.createObjectURL(file);
+                const imgPreviewWrap = this.#getSelector(".img-preview");
+                const imgPreview = imgPreviewWrap?.querySelector("img");
+                const titlePreview = imgPreviewWrap?.querySelector(".img-info h3");
+                const sizePreview = imgPreviewWrap?.querySelector(".img-info span");
+                if (!boxEl?.classList.contains("isPreview")) {
+                    boxEl?.classList.add("isPreview");
+                    innerEl.insertAdjacentHTML(
+                        "beforeend",
+                        imgPreviewHtml({
+                            url: this.#urlPreview,
+                            title: fileTitle,
+                            size: fileSize,
+                        })
+                    );
+                } else {
+                    imgPreview.src = this.#urlPreview;
+                    titlePreview.textContent = fileTitle;
+                    sizePreview.textContent = fileSize;
+                }
+            }
+            this.#file = file;
+            return file;
+        }
+
+        #removePreviewImg(e) {
+            e.stopPropagation();
+            const innerEl = this.#getSelector(".img-inner");
+            this.#file = null;
+            this.#boxImgEl?.classList?.remove("isPreview");
+            this.#inputEl.value = "";
+            if (innerEl?.hasChildNodes() && innerEl.children.length === 2) {
+                innerEl.removeChild(innerEl.children[1]);
+            }
+            return;
+        }
+
+        init() {
+            this.#inputEl?.addEventListener("change", this.#handleChange.bind(this));
+
+            this.#deleteEl?.addEventListener(
+                "click",
+                this.#removePreviewImg.bind(this)
+            );
+
+            this.init = function (callback) {
+                if (typeof callback === "function") {
+                    callback(this);
+                }
+                return this;
+            };
+            return this;
+        }
+    }
+
+    const uploadImg = new ImageSingleService("#bt-upload-singleImg");
+    uploadImg.init();
+
+</script>
+</body>
+</html>
