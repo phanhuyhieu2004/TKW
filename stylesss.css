@@ -1,0 +1,11 @@
+input:checked ~ img{
+/*biến mất khỏi giao diện*/
+  display: none;
+  /*biến khỏi giao diện nhưng vẫn chiếm vi trí*/
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+}
+img{
+  /*chuyển đổi trạng thai voi 1,5 giay*/
+  transition: 1.5s;
+}
