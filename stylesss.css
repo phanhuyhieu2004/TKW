@@ -9,3 +9,10 @@ img{
   /*chuyển đổi trạng thai voi 1,5 giay*/
   transition: 1.5s;
 }
+{
+   color: red;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+ }
