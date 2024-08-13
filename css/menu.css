@@ -1,0 +1,61 @@
+ul{
+  list-style: none;
+padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px;
+}
+nav>ul{
+  background: #b3d4fc;
+  display: flex;
+}
+nav>ul>li{
+  position: relative;
+}
+nav>ul>li>a{
+  color: white;
+}
+nav ul ul{
+  display: none;
+  position: absolute;
+  background: deeppink;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+nav ul li:hover>ul{
+  display: block;
+}
+nav ul ul li a {
+  color: #000;
+  padding: 10px 20px;
+}
+nav ul ul ul {
+  top: 0;
+  left: 100%;
+}
+/* Thêm hiệu ứng chuyển tiếp */
+nav ul ul {
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li:hover > ul {
+  display: block;
+  opacity: 1;
+}
+
+/* Thay đổi màu nền và màu chữ khi hover */
+nav ul li:hover > a {
+  background-color: #444;
+}
+
+nav ul ul li:hover > a {
+  background-color: #ddd;
+  color: #000;
+}
+
+

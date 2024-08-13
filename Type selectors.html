@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Type selectors</title>
+  <style>
+  /*  p:first-child{*/
+  /*    color: red;*/
+  /*  }*/
+  /*  p:first-of-type{*/
+  /*    color: blue;*/
+  /*  }*/
+  /*h2:last-of-type{*/
+  /*    color: green;*/
+  /*  }*/
+  /*p:last-of-type{*/
+  /*  color: deeppink;*/
+  /*}*/
+  /*p:nth-of-type(1){*/
+  /*  color: red;*/
+  /*}*/
+  .top:nth-last-of-type(1){
+    color: deeppink;
+  }
+  /*p:only-of-type{*/
+  /*  color: blue;*/
+  /*}*/
+  /*p:nth-last-of-type(even){*/
+  /*  color: red;*/
+  /*}*/
+  /*.top:not(:first-child){*/
+  /*  background: yellow;*/
+  /*}*/
+  </style>
+</head>
+<body>
+
+<h1 class="top">Tu hoc</h1>
+<p>Doan 1</p>
+<p class="top">Doan 2</p>
+<p>Doan 3</p>
+<h2>Tieu de 1</h2>
+<h2 class="top">Tieu de 2</h2>
+<h2>Tieu de 3</h2>
+<h2>Tieu de 4</h2>
+<div>
+  <p>Duy mỹ</p>
+</div>
+<div>
+  <p>duy nhất</p>
+<!--  phần tử <p> cuối cùng trong phạm vi phần tử cha của nó-->
+  <h1>Yêu</h1>
+</div>
+
+</body>
+</html>

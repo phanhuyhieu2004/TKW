@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*.parent{*/
+    /*  !*Th4 cha có font tương đối:thẻ cha lấy kt mặc định từ trình duyệt ,thẻ con kế thừa cha*!*/
+    /*  font-size: 2em;*/
+    /*  !*TH2 thẻ cha có font tuyệt đối*!*/
+
+    /*  !*font-size: 20px;*!*/
+    /*}*/
+    /*TH1:phụ thuộc vào font chữ của root nếu cha không có font sie*/
+    /*    .child{*/
+    /*!*TH3:phụ thuộc vào chính nó(nếu nó có kt tuyệt đối)*!*/
+    /*!*      font-size: 10px;*!*/
+    /*!*      width: 10em;*!*/
+    /*!*      height: 10em;*!*/
+    /*!*      background: red;*!*/
+    /*    }*/
+
+
+
+
+    .parent{
+      font-size: 10px;
+    }
+    .child{
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<div class="parent">
+<!--  10px x 2 =20px-->
+  <div class="child">em
+<!--    20px x 2=40px-->
+    <div class="child">em
+<!--      40px x2=80px-->
+      <div class="child">em</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
