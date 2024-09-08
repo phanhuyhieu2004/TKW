@@ -1,0 +1,24 @@
+@property --box-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: cornflowerblue;
+}
+
+
+.box1 {
+  height: var(--box-height);
+  background: var(--b);
+  margin-bottom: 10px;
+}
+
+.box2 {
+  height: var(--box-height);
+  background: var(--box-color);
+  margin-bottom: 10px;
+}
+
+.box3 {
+  height: var(--box-height);
+  background: var(--box-color);
+  margin-bottom: 10px;
+}

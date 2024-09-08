@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    .header{
+      background: yellow;
+      /*position: relative;*/
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box1{
+      background: red;
+position: static;
+    }
+    .box2{
+      background: blue;
+      /*position: relative;*/
+      /*!*left: 50px;*!*/
+      /*!*right: 50px;*!*/
+      /*!*top: 50px;*!*/
+      /*bottom: 50px;*/
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .content{
+      background: aqua;
+      width: 400px;
+      margin: 40px;
+      /*position: relative;*/
+    }
+    .box3{
+      background: green;
+    }
+    h1{background: purple}
+    .noti{
+      margin: 5rem;
+      font-size: 10rem;
+      color: violet;
+      background: yellow;
+      position: relative;
+    }
+    .mes-number{
+      font-size: 4rem;
+      padding: 0.5rem;
+      background: red;
+      color: #fff;
+      border-radius: 20px;
+      position: absolute;
+      left: 100px;
+      top: -35px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="content">
+    <div class="box box1">Khối 1</div>
+    <div class="box box2">Khối 2</div>
+    <div class="box box3">Khối 3</div>
+    <h1>Hihi</h1>
+  </div>
+
+</div>
+<div class="noti">
+  <i class="fa-solid fa-message"></i>
+  <span class="mes-number">99</span>
+</div>
+</body>
+</html>
