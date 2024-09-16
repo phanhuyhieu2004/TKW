@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
   <style>
     .container{
       height: 150px;
-      display: flex;
       background: aqua;
+      display: flex;
+      flex-direction: column;
     }
     .box{
+      width: 30%;
+      /*flex-basis: 30%;*/
       background: blue;
       border: 1px solid;
-      /*flex-grow: 1;*/
-    }
-.box1{
-  flex-grow: 1;
-}
-    .box3{
-      flex-grow: 2;
     }
   </style>
 </head>
@@ -34,17 +30,8 @@
   <div class="box box3">
     block3
   </div>
-  <div class="box box4">
-    block4
-  </div>
-  <div class="box box5">
-    block5
-  </div>
-  <div class="box box6">
-    block6
-  </div>
+
 
 </div>
-
 </body>
 </html>

@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
   <style>
     .container{
-      height: 150px;
       display: flex;
+      height: 150px;
       background: aqua;
+      /*flex-wrap: wrap;*/
     }
     .box{
       background: blue;
       border: 1px solid;
-      /*flex-grow: 1;*/
+      width: 30%;
+      /*flex-shrink: 0;*/
     }
-.box1{
-  flex-grow: 1;
-}
-    .box3{
-      flex-grow: 2;
+    .box1,.box2{
+      flex-shrink: 2;
+      word-wrap: break-word;
+      overflow: auto;
     }
   </style>
 </head>
@@ -26,8 +27,7 @@
 <div class="container">
 
   <div class="box box1">
-    block1
-  </div>
+    This is a very long text that might not fit in the box unless it wraps to the next line.  </div>
   <div class="box box2">
     block2
   </div>
@@ -43,6 +43,7 @@
   <div class="box box6">
     block6
   </div>
+
 
 </div>
 
