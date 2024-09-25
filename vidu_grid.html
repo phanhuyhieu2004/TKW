@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box1 {
+      background: red;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      border-radius: 10px;
+
+    }
+
+    .box2 {
+      background: blue;
+
+      grid-column-start: 3;
+      grid-column-end: 6;
+      border-radius: 10px;
+
+    }
+
+    .box3 {
+      background: greenyellow;
+      border-radius: 10px;
+
+      grid-row-start:2 ;
+      grid-row-end: 4;
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+
+    .box4 {
+      border-radius: 10px;
+
+      background: pink;
+
+    }
+
+    .box5{
+      border-radius: 10px;
+
+      background: mediumpurple;
+
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .box6 {
+      border-radius: 10px;
+
+      background: deepskyblue;
+
+    }
+    .box{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container{
+      display: inline-grid;
+      background: aquamarine;
+      grid-template-columns: repeat(5,100px);
+      grid-template-rows:repeat(3,100px) ;
+gap:15px
+
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">Item 1</div>
+  <div class="box box2">Item 2</div>
+  <div class="box box3">Item 3</div>
+  <div class="box box4">Item 4</div>
+  <div class="box box5">Item 5</div>
+  <div class="box box6">Item 6</div>
+</div>
+
+</body>
+</html>

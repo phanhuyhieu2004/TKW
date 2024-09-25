@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blue;
+    }
+    .container{
+      display: grid;
+      gap: 2px;
+      /*mặc định hướng các item là row*/
+      /*grid-auto-flow: row;*/
+      /*số cột mặc định là 1 neen cần chỉ định số cột*/
+      /*grid-template-columns: repeat(5,100px);*/
+      /*chuyển hướng sang col*/
+      grid-auto-flow: column;
+      /*chỉ định số hàng*/
+      grid-template-rows: repeat(3,50px);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">Item 1</div>
+  <div class="box box2">Item 2</div>
+  <div class="box box3">Item 3</div>
+  <div class="box box4">Item 4</div>
+  <div class="box box5">Item 5</div>
+
+</div>
+
+</body>
+</html>

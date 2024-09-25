@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+
+    }
+
+    .container {
+      background: antiquewhite;
+      display: grid;
+      gap: 10px;
+      grid-template-areas:
+        "item1 item1 item2 item2 item2"
+         "item1 item1 item3 item3 item4"
+    "item5 item5 item3 item3 item6";
+      grid-auto-columns: 100px;
+      grid-auto-rows: 100px;
+
+    }
+
+    .box1 {
+      background: red;
+      grid-area: item1;
+    }
+
+    .box2 {
+      background: blue;
+      grid-area: item2;
+
+    }
+
+    .box3 {
+      background: greenyellow;
+      grid-area: item3;
+
+    }
+
+    .box4 {
+      background: yellow;
+      grid-area: item4;
+
+    }
+
+    .box5 {
+      background: pink;
+      grid-area: item5;
+    }
+
+    .box6 {
+      background: purple;
+      grid-area: item6;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">Box 1</div>
+  <div class="box box2">Box 2</div>
+  <div class="box box3">Box 3</div>
+  <div class="box box4">Box 4</div>
+  <div class="box box5">Box 5</div>
+  <div class="box box6">Box 6</div>
+</div>
+</body>
+</html>
