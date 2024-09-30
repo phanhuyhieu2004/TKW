@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css style -->
+
+  <title>Custom radio</title>
+  <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: #333;
+    font-family: system-ui, sans-serif;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-top: 16px;
+    user-select: none;
+  }
+
+  .form-label,
+  .form-input {
+    display: block;
+  }
+
+  .form-label {
+    font-weight: 600;
+  }
+
+  .form-input {
+    width: 240px;
+    height: 34px;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .form-group .btn {
+    margin-top: 20px;
+    padding: 10px 28px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #fff;
+    background: #f05123;
+    cursor: pointer;
+  }
+
+  .form-group .btn:hover {
+    opacity: 0.9;
+
+
+  }
+
+  .gender-group label::before {
+    margin-right: 4px;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #000;
+    border-radius: 50%;
+  }
+
+  .gender-group label {
+    position: relative;
+  }
+
+  .gender-group label::after {
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    display: none;
+  }
+
+  #male:checked + label::after,
+  #female:checked + label::after,
+  #other:checked + label::after {
+    display: inline-block;
+  }
+  </style>
+  <!-- homepage https://tuhoc.cc -->
+</head>
+
+<body>
+<main>
+  <h1>Register</h1>
+
+  <form action="">
+    <div class="form-group">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-input" type="text" id="name" name="name" required/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Gender</label>
+      <div class="gender-group">
+        <input type="radio" name="gender" id="male" value="male" hidden="hidden"/>
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female" value="female " hidden="hidden"/>
+        <label for="female">Female</label>
+
+        <input type="radio" name="gender" id="other" value="other" hidden="hidden"/>
+        <label for="other">Other</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="email">Email</label>
+      <input class="form-input" type="email" id="email" name="email" required/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="password">Password</label>
+      <input class="form-input" type="password" id="password" name="password" required/>
+    </div>
+
+    <div class="form-group">
+      <button class="btn" type="submit">Register</button>
+    </div>
+  </form>
+</main>
+</body>
+
+</html>
