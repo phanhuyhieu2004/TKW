@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+ <style>
+   @media (max-width: 991.98px) {
+     /* 1. ẩn navbar trên tablet và mobile */
+     .navbar {
+       display: none;
+     }
+     /* 2. chuyển logo vào giữa */
+     .header-top {
+       position: relative;
+     }
+     .header__logo {
+       position: absolute;
+       left: 50%;
+       translate: -50% -50%;
+     }
+
+     /*3. căn lại vị trí của menu icon */
+     .menu-header__icon {
+       position: absolute;
+       top: 38px;
+       left: 26px;
+       color: #fff;
+       width: 24px;
+     }
+
+     /* 4. overlay */
+     .menu-overlay {
+       position: fixed;
+       background: rgba(0, 0, 0, 0.3);
+       inset: 0;
+       z-index: 1;
+       /* bình thường ẩn overlay đi */
+       opacity: 0;
+       visibility: hidden;
+       transition: 0.5s;
+     }
+
+     /* 5. kiểm tra nếu checkbox được check thì hiện overlay */
+     .menu-checkbox:checked ~ .menu-overlay {
+       opacity: 1;
+       visibility: visible;
+     }
+     /* 6. code cho menu drawer */
+     .menu-drawer {
+       position: fixed;
+       background-color: #2e1919;
+       inset: 0 40% 0 0;
+       z-index: 2;
+       transform: translateX(-100%);
+       transition: 0.5s;
+       padding: 60px;
+     }
+     /* 7. kiểm tra nếu checkbox được check hiện menu */
+     .menu-checkbox:checked ~ .menu-drawer {
+       transform: translateX(0);
+     }
+     /* 8. menu top */
+     .close__menu {
+       width: 24px;
+       color: #fff;
+     }
+
+     .menu-drawer__top {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+
+     .navbar__list {
+       margin-top: 25px;
+       flex-direction: column;
+     }
+
+     #navbar__list--mobile {
+       margin-top: 25px;
+     }
+
+     .navbar__link {
+       display: block;
+       font-size: 2rem;
+     }
+
+     .navbar__link:hover {
+       background-color: #00ffff37;
+     }
+
+     /* khoi hero */
+     .hero {
+       flex-direction: column;
+       gap: 50px;
+     }
+
+     .hero__content {
+       order: 2;
+     }
+
+     .hero__media {
+       order: 1;
+     }
+
+     .hero__content {
+       width: 80%;
+       text-align: center;
+       margin: 22px auto;
+     }
+
+     .hero__row {
+       justify-content: center;
+     }
+
+     /* khối service */
+     .service__row {
+       flex-direction: column;
+       row-gap: 20px;
+     }
+
+     .service__img {
+       width: 100%;
+     }
+
+     .service__list {
+       text-align: center;
+     }
+
+     .service-item {
+       width: 90%;
+       text-align: start;
+     }
+
+     /* work list */
+     .work__list {
+       grid-template-columns: 1fr;
+       row-gap: 30px;
+     }
+
+     /* about */
+     .about-row {
+       flex-direction: column;
+       row-gap: 30px;
+     }
+
+     .about__media {
+       width: 100%;
+     }
+
+     /* ẩn ảnh small */
+     .about__img--small {
+       display: none;
+     }
+
+     .about__img--big {
+       width: 100%;
+       border-radius: 15px;
+       margin: 25px auto;
+     }
+
+     .about-content {
+       width: 90%;
+       text-align: center;
+     }
+
+     /* team list */
+     .team__list {
+       grid-template-columns: repeat(2, 1fr);
+       row-gap: 30px;
+     }
+
+     .team-item__thumb {
+       margin: 0 auto;
+     }
+
+     /* install */
+     .install__img {
+       display: none;
+     }
+
+     .install__content {
+       width: 90%;
+       margin: 0 auto;
+     }
+
+     /* blog */
+     .blog__inner {
+       flex-direction: column;
+       row-gap: 30px;
+     }
+
+     .blog__list {
+       order: 1;
+     }
+
+     .blog__content {
+       order: 2;
+       width: 90%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+     }
+
+     .blog__heading {
+       max-width: 90%;
+     }
+   }
+
+ </style>
+</head>
+<body>
+<div class="mobile-header">
+  <!-- tablet/mobile menu -->
+  <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox" hidden>
+  <label for="menu-checkbox">
+    <svg class="menu-header__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+    </svg>
+  </label>
+
+  <!-- overlay -->
+  <label for="menu-checkbox" class="menu-overlay"></label>
+
+  <!-- menu content -->
+</div>
+
+</body>
+</html>

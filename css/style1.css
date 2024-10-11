@@ -1,7 +1,12 @@
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 
+}
 :root {
   --header-bg: #10375c
 }
@@ -507,13 +512,12 @@ a {
   max-width: 489px;
 }
 .install__desc{
-  width: 586px;
-  color: #FFF;
-
+  margin-top: 18px;
+  max-width: 586px;
+  color: #fff;
   font-size: 1.8rem;
-  font-style: normal;
   font-weight: 300;
-  line-height:1.67
+  line-height: 1.67;
 }
 .install__row{
 margin-top: 38px;
