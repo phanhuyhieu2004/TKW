@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Tours</title>
+</head>
+<body>
+<div class="container">
+  <h1>Our Featured Tours</h1>
+  <div class="tabs">
+    <button class="tab active" data-tour="la">Los Angeles</button>
+    <button class="tab" data-tour="costa-rica">Costa Rica</button>
+    <button class="tab" data-tour="yellowstone">Yellowstone</button>
+  </div>
+  <div class="tour-content">
+    <div class="tour" id="la-tour1">
+      <div class="tour-info">
+        <span class="featured">Featured</span>
+        <h2>Full-Day Iconic Sights of LA, Hollywood, Beverly Hills</h2>
+        <p>From <span class="price">$199.99</span></p>
+      </div>
+      <img src="la-tour1.jpg" alt="Los Angeles Tour 1">
+    </div>
+    <div class="tour" id="la-tour2">
+      <div class="tour-info">
+        <span class="featured">Featured</span>
+        <h2>LA Sunset Cruise</h2>
+        <p>From <span class="price">$149.99</span></p>
+      </div>
+      <img src="la-tour2.jpg" alt="Los Angeles Tour 2">
+    </div>
+    <div class="tour" id="la-tour3">
+      <div class="tour-info">
+        <span class="featured">Featured</span>
+        <h2>Disneyland Day Trip</h2>
+        <p>From <span class="price">$129.99</span></p>
+      </div>
+      <img src="la-tour3.jpg" alt="Los Angeles Tour 3">
+    </div>
+
+    <div class="tour" id="costa-rica-tour1" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 10% Off</span>
+        <h2>7 Days in Costa Rica - Classic (Self-Drive)</h2>
+        <p>From <span class="price">$170.99</span> <span class="original-price">$189.99</span></p>
+      </div>
+      <img src="costa-rica-tour1.jpg" alt="Costa Rica Tour 1">
+    </div>
+    <div class="tour" id="costa-rica-tour2" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 10% Off</span>
+        <h2>Costa Rica Beach Getaway</h2>
+        <p>From <span class="price">$189.99</span> <span class="original-price">$199.99</span></p>
+      </div>
+      <img src="costa-rica-tour2.jpg" alt="Costa Rica Tour 2">
+    </div>
+    <div class="tour" id="costa-rica-tour3" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 10% Off</span>
+        <h2>Costa Rica Wildlife Expedition</h2>
+        <p>From <span class="price">$160.99</span> <span class="original-price">$179.99</span></p>
+      </div>
+      <img src="costa-rica-tour3.jpg" alt="Costa Rica Tour 3">
+    </div>
+
+    <div class="tour" id="yellowstone-tour1" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 15% Off</span>
+        <h2>Yellowstone and Grand Teton Adventure – 6 Day</h2>
+        <p>From <span class="price">$169.99</span> <span class="original-price">$199.99</span></p>
+      </div>
+      <img src="yellowstone-tour1.jpg" alt="Yellowstone Tour 1">
+    </div>
+    <div class="tour" id="yellowstone-tour2" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 15% Off</span>
+        <h2>Yellowstone Wildlife Safari</h2>
+        <p>From <span class="price">$199.99</span> <span class="original-price">$219.99</span></p>
+      </div>
+      <img src="yellowstone-tour2.jpg" alt="Yellowstone Tour 2">
+    </div>
+    <div class="tour" id="yellowstone-tour3" style="display: none;">
+      <div class="tour-info">
+        <span class="featured discount">Featured 15% Off</span>
+        <h2>Yellowstone Family Adventure</h2>
+        <p>From <span class="price">$179.99</span> <span class="original-price">$199.99</span></p>
+      </div>
+      <img src="yellowstone-tour3.jpg" alt="Yellowstone Tour 3">
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll('.tab');
+    const tours = document.querySelectorAll('.tour');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        tours.forEach(tour => {
+          tour.style.display = 'none';
+        });
+        const selectedTour = this.getAttribute('data-tour');
+        const selectedTours = document.querySelectorAll(`#${selectedTour}-tour1, #${selectedTour}-tour2, #${selectedTour}-tour3`);
+        selectedTours.forEach(tour => {
+          tour.style.display = 'block';
+        });
+
+        tabs.forEach(t => {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
+</body>
+</html>

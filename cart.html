@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+
+    }
+
+    .container {
+      height: 100vh;
+      background: red;
+    }
+
+    .cart__top {
+      height: 50vh;
+      background: blue;
+      display: flex;
+    }
+
+    button {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+      overflow: hidden;
+      color: #fff;
+      background: var(--shop-color-main);
+      border: 0;
+      padding: 12px 28px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 1px;
+      outline: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    .cart__search {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      width: 50%;
+      position: relative;
+      border-bottom: 2px solid #ccc;
+      background: pink;
+    }
+
+    .cart__quantity {
+      flex: 2;
+      background: purple;
+    }
+
+    .cart__add {
+      flex: 0.5;
+      background: olivedrab;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      color: white;
+    }
+
+    .cart__main {
+      display: flex;
+    }
+
+    .cart__products {
+      flex: 2;
+      height: 50vh;
+      background: yellow;
+    }
+
+    .cart__pay {
+      flex: 1;
+      height: 50vh;
+      background: green;
+    }
+
+    .cart__add--plus {
+      font-size: 50px;
+      color: white;
+      border: none;
+      background: none;
+    }
+
+    .cart__items {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .cart__item {
+      background: aquamarine;
+      height: fit-content;
+      display: flex;
+      gap: 10px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .cart__item--number::after {
+      content: '';
+      background: red;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      right: 1px;
+      bottom: 12px;
+      left: 5px;
+      border-radius: 50%;
+    }
+
+    .cart__item--number {
+
+      position: relative;
+
+    }
+
+    .cart__search--input {
+      border: none;
+      flex: 1 1;
+      outline: none;
+      font-size: 15px;
+      padding: 20px;
+
+    }
+
+    .cart__search--btn {
+      background: #fff !important;
+      border: none;
+      outline: none;
+      color: #666;
+      font-size: 1.8rem !important;
+      cursor: pointer;
+    }
+
+    .cart__search--dropdown {
+      display: none;
+      position: absolute;
+      top: 60%;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+
+    }
+
+    .cart__search--advanced {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .result__item--image {
+      width: 40px;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .results__products {
+      height: 500px;
+      background: red;
+      overflow: auto;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      max-width: 100%;
+      height: fit-content;
+    }
+
+    .result__item {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 10px;
+    }
+
+    .result__item--price {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart__products{
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+    .cart__pay{
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  </style>
+</head>
+<body>
+<main class="container">
+  <div class="cart__top">
+    <div class="cart cart__search">
+      <input class="cart__search--input" type="text" placeholder="Thêm sản phẩm..." value="">
+      <div class="cart__search--dropdown">
+        <div class="cart__search--advanced">
+          <i class="fa-solid fa-plus"></i>
+          <span>Tìm kiem nang cao</span>
+        </div>
+        <div class="results__products">
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+          <div class="result__item">
+            <div class="result__item--image">
+              <img src="favicon.ico">
+            </div>
+            <div class="result__item--title">
+              <span>Aó sơ mi t4</span>
+            </div>
+            <div class="result__item--color">
+              <span>Xanh</span>
+            </div>
+            <div class="result__item--size">
+              <span>M</span>
+            </div>
+            <div class="result__item--price">
+              <span>200k</span>
+              <span>Còn lại : 15</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart cart__quantity">
+      <div class="cart__items">
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+        <div class="cart__item">
+          <span class="cart__item--title">Đơn 1</span>
+          <div class="cart__item--number">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="cart__item--delete">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="cart cart__add">
+      <form action="#" method="post">
+        <button type="submit" class="cart__add--plus">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="cart__main">
+    <div class="cart__products">
+
+    </div>
+    <div class="cart__pay">
+
+    </div>
+  </div>
+</main>
+</body>
+</html>
