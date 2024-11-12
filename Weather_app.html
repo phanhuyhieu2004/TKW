@@ -158,6 +158,19 @@
         font-size: 14px;
       }
     }
+
+    @keyframes icon_scale {
+      from {
+        scale: 0.95;
+      }
+      to {
+        scale: 1.2;
+      }
+
+    }
+    .img-weather{
+      animation: icon_scale 0.5s infinite ;
+    }
   </style>
 </head>
 <body>
@@ -208,17 +221,27 @@
           console.log(data.main.temp_max);
           let iconClass = '';
           if (data.weather[0].main === 'Clear') {
-            iconClass = 'coulds'; // Biểu tượng mặt trời
+            iconClass = 'clear'; // Biểu tượng mặt trời
           } else if (data.weather[0].main === 'Rain') {
-            iconClass = 'coulds'; // Biểu tượng mưa
+            iconClass = 'rain'; // Biểu tượng mưa
           } else if (data.weather[0].main === 'Clouds') {
-            iconClass = 'coulds'; // Biểu tượng mây
+            iconClass = 'clouds'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Drizzle') {
+            iconClass = 'drizzle'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Snow') {
+            iconClass = 'snow'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Mist') {
+            iconClass = 'mist'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Smoke') {
+            iconClass = 'wind'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Haze') {
+            iconClass = 'haze'; // Biểu tượng mây
           }
           result.innerHTML = `
         <h2>${data.name}</h2>
         <h4 class="weather">${data.weather[0].main}</h4>
         <h4 class="desc">${data.weather[0].description}</h4>
- <img src="./images/${iconClass}.png">   <h1>${data.main.temp} &#176;</h1>
+ <img src="https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/${iconClass}.png?raw=true" class="img-weather">   <h1>${data.main.temp} &#176;</h1>
         <div class="temp-container">
             <div>
                 <h4 class="title">min</h4>
