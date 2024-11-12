@@ -27,8 +27,9 @@
     }
     body {
       height: 100vh;
-      background-color: #FF9A8B;
-      background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);    }
+      background-color: #0093E9;
+      background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
     .wrapper {
       font-size: 16px;
       width: 90vw;
@@ -52,6 +53,7 @@
       position: absolute;
       background-color: var(--transp-white-1);
       backdrop-filter: blur(1.2em);
+
       border: 2px solid var(--transp-white-2);
       border-radius: 50%;
     }
@@ -171,6 +173,29 @@
     .img-weather{
       animation: icon_scale 0.5s infinite ;
     }
+    @media (max-width: 767.98px) {
+      .wrapper {
+        font-size: 14px;
+        width: 100vw;
+        padding: 0 1em;
+      }
+
+      .search-container {
+        grid-template-columns: 7fr 3fr; /* Hoặc 1fr 1fr nếu bạn muốn chia đều */
+        gap: 0.5em;
+      }
+
+      .search-container input {
+        padding: 0.5em; /* Giảm padding */
+        font-size: 0.9em; /* Giảm font-size */
+      }
+
+      .search-container button {
+        font-size: 0.9em;
+        padding: 0.5em;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -183,7 +208,7 @@
         type="text"
         placeholder="Enter a city name"
         id="city"
-        value="mumbai"
+        value="hanoi"
       />
       <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
@@ -235,7 +260,7 @@
           }else if (data.weather[0].main === 'Smoke') {
             iconClass = 'wind'; // Biểu tượng mây
           }else if (data.weather[0].main === 'Haze') {
-            iconClass = 'haze'; // Biểu tượng mây
+            iconClass = 'haze1'; // Biểu tượng mây
           }
           result.innerHTML = `
         <h2>${data.name}</h2>
