@@ -53,22 +53,26 @@
       position: absolute;
       /*background-color: var(--transp-white-1);*/
       /*backdrop-filter: blur(1.2em);*/
-      background: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/sun.gif?raw=true");
 
-      border: 2px solid var(--transp-white-2);
+      /*border: 2px solid var(--transp-white-2);*/
       border-radius: 50%;
     }
     .shape-1 {
+      background: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/sun-unscreen.gif?raw=true");
+
       height: 13em;
       width: 13em;
       right: -6.5em;
       top: 1.8em;
     }
     .shape-2 {
+      background-image: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/cloudy-unscreen.gif?raw=true");
       height: 11em;
       width: 11em;
       bottom: -3.7em;
       left: -2.5em;
+      background-size: cover;
+      z-index: 1;
     }
     .search-container {
       font-size: 1em;
@@ -175,6 +179,15 @@
       animation: icon_scale 0.5s infinite ;
     }
     @media (max-width: 767.98px) {
+      .shape-2 {
+        background-image: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/cloudy-unscreen.gif?raw=true");
+        height: 11em;
+        width: 11em;
+        bottom: -3.7em;
+        left: -0.5em;
+        background-size: cover;
+        z-index: 1;
+      }
       .wrapper {
         font-size: 14px;
         width: 100vw;
@@ -201,7 +214,7 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="shape shape-1"></div>
+<!--  <div class="shape shape-1"></div>-->
   <div class="shape shape-2"></div>
   <div class="container">
     <div class="search-container">
