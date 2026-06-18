@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Cards Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card-image {
+      position: relative;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-button::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 25px solid #ff0000;
+      position: absolute;
+    }
+
+    .card-title {
+      padding: 10px;
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .video-card {
+        width: 250px;
+      }
+      .card-image {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-card {
+        width: 100%;
+      }
+      .card-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="video-card">
+    <div class="card-image" style="background-image: url('https://via.placeholder.com/400x250');">
+      <div class="play-button"></div>
+    </div>
+    <h3 class="card-title">VIDEO 8</h3>
+  </div>
+  <div class="video-card">
+    <div class="card-image" style="background-image: url('https://via.placeholder.com/400x250/blue');">
+      <div class="play-button"></div>
+    </div>
+    <h3 class="card-title">VIDEO 6</h3>
+  </div>
+  <div class="video-card">
+    <div class="card-image" style="background-image: url('https://via.placeholder.com/400x250/purple');">
+      <div class="play-button"></div>
+    </div>
+    <h3 class="card-title">VIDEO 5</h3>
+  </div>
+</div>
+</body>
+</html>
