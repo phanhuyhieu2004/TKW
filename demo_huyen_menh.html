@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huyền Mệnh - Immersive Smoke Demo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        /* ── Lớp 1: Ảnh nền Obsidian ── */
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://res.cloudinary.com/drac9ko3l/image/upload/v1778399464/PixExtender-1778399279118_hvgyq8.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            filter: brightness(0.6);
+        }
+
+        /* ── Lớp sương mù (Sử dụng ảnh khói thực tế) ── */
+        .smoke-container {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            pointer-events: none;
+            mix-blend-mode: screen; /* Giúp khói hòa vào ánh sáng nền */
+        }
+
+        .smoke-layer {
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: -100%;
+            left: -100%;
+            background-image: url('https://res.cloudinary.com/drac9ko3l/image/upload/v1778401340/smoke_layer_f9p7k3.png'); /* Ảnh khói trắng trong suốt */
+            background-repeat: repeat;
+            opacity: 0.3;
+        }
+
+        /* Lớp khói 1: Trôi chậm */
+        .smoke-1 {
+            animation: drift-slow 60s linear infinite;
+        }
+
+        /* Lớp khói 2: Trôi nhanh hơn và hơi nghiêng */
+        .smoke-2 {
+            background-image: url('https://res.cloudinary.com/drac9ko3l/image/upload/v1778401340/smoke_layer_f9p7k3.png');
+            opacity: 0.2;
+            animation: drift-fast 40s linear infinite reverse;
+            filter: blur(10px);
+        }
+
+        /* Lớp khói 3: Xoay nhẹ */
+        .smoke-3 {
+            opacity: 0.15;
+            animation: drift-rotate 80s linear infinite;
+            filter: hue-rotate(45deg); /* Đổi màu nhẹ để tạo độ sâu */
+        }
+
+        @keyframes drift-slow {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(10%, 5%) scale(1.1); }
+        }
+
+        @keyframes drift-fast {
+            from { transform: translate(0, 0) scale(1.2); }
+            to { transform: translate(-15%, -10%) scale(1); }
+        }
+
+        @keyframes drift-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Vignette dìm tối các góc để khói nổi lên ở giữa */
+        .vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 20%, rgba(5,5,5,0.9) 100%);
+            z-index: 10;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #D4AF37;
+            font-family: serif;
+            letter-spacing: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+            z-index: 20;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene">
+        <div class="title">Huyền Mệnh - Khói Sương</div>
+        
+        <div class="bg-image"></div>
+        
+        <div class="smoke-container">
+            <div class="smoke-layer smoke-1"></div>
+            <div class="smoke-layer smoke-2"></div>
+            <div class="smoke-layer smoke-3"></div>
+        </div>
+
+        <div class="vignette"></div>
+    </div>
+
+</body>
+</html>

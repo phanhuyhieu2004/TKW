@@ -1,0 +1,18 @@
+h1{
+  /* color:rgb(117, 14, 14) */
+  /* color:rgba(444, 3, 333, 1); */
+  color:#ff9944;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.box{
+  width:200px;
+  height:200px;
+  color:pink;
+  outline: 10px solid currentColor;
+  outline-offset: 10px;
+}
+.box_child{
+  width:100px;
+  height:100px;
+  background-color:currentColor;
+}

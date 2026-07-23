@@ -1,0 +1,18 @@
+.box{
+  height:300px;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnofE5ePrFfGEdG_T6kUCO45vomUYT2fijkM5otgdFXQ&s=10');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: local;
+}
+.test_local{
+  margin-top:40px;
+  height: 100px;
+  width:70%;
+  overflow: auto;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnofE5ePrFfGEdG_T6kUCO45vomUYT2fijkM5otgdFXQ&s=10');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  background-attachment: local;
+}

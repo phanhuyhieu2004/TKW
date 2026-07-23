@@ -1,0 +1,12 @@
+body{
+  background-size: cover;
+  background-image: url('e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.webp');
+}
+.box{
+  height:100px;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}

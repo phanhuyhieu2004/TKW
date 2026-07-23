@@ -1,0 +1,15 @@
+.container{
+  background-color: cyan;
+  height: 150px;
+  display: flex;
+  overflow: auto;
+}
+.box{
+  background-color: blue;
+  border:1px solid black;
+  width: 30%;
+  /* flex-shrink: 0; */
+}
+.box1,.box2{
+  flex-shrink: 3;
+}

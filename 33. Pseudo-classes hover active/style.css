@@ -1,0 +1,26 @@
+/* #line_2:hover{
+  color:red;
+  font-size:30px
+} */
+/* #line_2:active{
+  color:green
+}
+.click_me:link{
+  color:chocolate
+}
+.click_me:visited{
+  color:green
+} */
+ .div_elm:empty{
+  width:200px;
+  height:200px;
+  background-color:blue
+ }
+  .div_elm{
+  width:200px;
+  height:200px;
+  background-color:red
+ }
+h2:target{
+  color:green
+}

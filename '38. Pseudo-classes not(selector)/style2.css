@@ -1,0 +1,13 @@
+*{
+  color:red !important;
+}
+h1{
+  color:blue;
+  font-size:35px
+}
+.demo{
+  color:pink;
+}
+#theh1{
+  color:yellow
+}

@@ -1,0 +1,41 @@
+:root{
+  --box-height:100px;
+  --box-color:#0f0;
+
+}
+.box1{
+  height:var(--box-height);
+  background: var(--box-color);
+  margin-bottom:10px;
+
+}
+.box2{
+  height:var(--box-height);
+  background: var(--box-color);
+  margin-bottom:10px;
+
+}
+.box3{
+  height:var(--box-height);
+  background: var(--box-color);
+  margin-bottom:10px;
+
+}
+/* .box1{
+  height:var(--box-height);
+  background: green;
+  margin-bottom:10px;
+
+}
+.box2{
+  height:110px;
+  background: green;
+  margin-bottom:10px;
+
+}
+.box3{
+  height:110px;
+  background: green;
+  margin-bottom:10px;
+
+} */

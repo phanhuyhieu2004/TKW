@@ -1,0 +1,22 @@
+.box{
+  counter-reset: section;
+  padding-left: 30px;
+  background-color: red;
+}
+h2{
+  counter-increment: section;
+    counter-reset: sub-section;
+
+}
+h2::before{
+  content:"Phần "  counter(section)": "
+}
+h3{
+    counter-increment: sub-section;
+
+}
+h3::before{
+  content:counter(section)"." counter(sub-section)":";
+  color:blue;
+  padding: 20px;
+}

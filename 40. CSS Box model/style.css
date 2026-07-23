@@ -1,0 +1,14 @@
+div{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color:yellow;
+  /* padding: 20px; */
+  padding:20px 20px 30px 10px;
+  border: 10px solid blue;
+  /* border-width:10px 20px 30px 40px;
+  border-style:solid dotted dashed double;
+  border-color:pink yellow blue green; */
+  /* border-radius:30px */
+  border-top-left-radius:  30px;
+}

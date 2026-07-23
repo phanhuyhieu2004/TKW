@@ -1,0 +1,11 @@
+strong{
+  /* text-decoration:none; */
+  /* text-decoration: line-through; */
+  /* text-decoration:overline line-through */
+  text-decoration: underline;
+}
+.live{
+  text-indent: 50px;
+  text-transform: capitalize;
+}
+

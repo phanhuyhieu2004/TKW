@@ -1,0 +1,13 @@
+a{
+  text-decoration: none;
+  background-color: red;
+  border-radius: 999px;
+  width: 100px;
+  display: inline-block;
+    padding: 8px;
+  text-align: center;
+}
+a:hover{
+  background-color: blue;
+  color:aliceblue
+}

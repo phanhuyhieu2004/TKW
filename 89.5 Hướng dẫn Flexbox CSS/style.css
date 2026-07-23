@@ -1,0 +1,18 @@
+.box{
+  background-color: blue;
+  border:1px solid black;
+  width:30%
+}
+.container{
+  display: flex;
+flex-wrap: wrap;
+  background-color: cyan;
+  flex-direction: row-reverse;
+  flex-flow: wrap row-reverse;
+  /* flex-direction: row;
+  flex-direction: row-reverse;
+  justify-content: flex-end; */
+  /* flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start; */
+}

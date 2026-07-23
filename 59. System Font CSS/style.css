@@ -1,0 +1,15 @@
+/* body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+} */
+body{
+    font-family: "Inter", sans-serif;
+}
+p{
+  line-height: 1.5;
+  line-height:150%
+}
+h1{
+  height: 120px;
+  background-color: lightblue;
+  line-height: 110px;
+}

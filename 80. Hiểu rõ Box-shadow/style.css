@@ -1,0 +1,10 @@
+.box{
+  width: 150px;
+  height: 150px;
+  background: pink;
+  padding: 20px;
+box-shadow: 20px 10px 10px 10px red;
+/* box-shadow: inset 10px 20px red;
+box-shadow: 160px 0px; */
+pointer-events:none
+}

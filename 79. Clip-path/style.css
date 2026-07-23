@@ -1,0 +1,18 @@
+.box{
+  width: 200px;
+  height: 200px;
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx0mA8iE5JaSiMfNkaoVQ3rkUlqzBcf98Jb8aNvJFld_ehfzcVdxDmb76-&s=10') ;
+  background-position: center;
+  background-size: cover;
+  clip-path: circle(50%);
+  clip-path: inset(40px round 10px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%,0% 100%);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0% 100%);
+  clip-path:polygon(0% 100%,50% 0%, 100% 100%);
+    clip-path:polygon(0% 100%,50% 0%, 100% 100%, 50% 80%)
+
+}
+h1{
+  background: transparent;
+  text-shadow: 10px 0px red 1.0;
+}

@@ -1,0 +1,27 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
+.box{
+  background-color: red;
+  width:200px;
+  height:200px;
+  padding:20px;
+  border: 1px solid black;
+}
+.box1{
+  margin-bottom: 50px;
+}
+.box2{
+  margin-top: 70px;
+}
+/* .item{
+  background-color: yellow;
+  border: 1px solid black;
+}
+.item1{
+  margin-right:10px
+}
+.item2{
+  margin-left:20px
+} */

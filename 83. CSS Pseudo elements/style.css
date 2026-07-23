@@ -1,0 +1,40 @@
+/* p::first-line{
+  color:red
+
+} */
+span{
+  display: block;
+}
+span::first-line{
+  background: yellow;
+}
+p::first-letter{
+  color:pink;
+  font-size: 40px;
+
+}
+p::selection{
+  background: blue;
+  color:white
+}
+li::marker{
+  color:violet;
+  font-size: 40px;
+}
+.box::before{
+  content: "Em ở đằng trước ";
+}
+.box::after{
+  content:"";
+  color:red;
+  display: inline-block;
+  width: 100px;
+  background: pink;
+  height: 6px;
+  border-radius: 999px;
+}
+.box2:empty{
+  width: 200px;
+  height: 100px;
+  background-color: red;
+}

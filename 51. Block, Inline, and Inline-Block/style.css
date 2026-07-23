@@ -1,0 +1,13 @@
+body{
+  width: 650px;
+  background-color: yellow;
+}
+strong{
+  /* padding: 30px; */
+  /* margin: 30px; */
+  height: 100px;
+  width: 100px;
+  padding: 30px;
+  background-color: red;
+  display: inline-block;
+}
