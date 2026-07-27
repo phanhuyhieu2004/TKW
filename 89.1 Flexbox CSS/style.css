@@ -7,10 +7,10 @@
   display: flex;
   background-color: cyan;
 justify-content: space-evenly;
-align-items: flex-start;
+/* align-items: flex-start;
 align-items: flex-end;
 align-items: center;
-align-items: baseline;
+align-items: baseline; */
 
 }
 .box{

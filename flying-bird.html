@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chim Bồ Câu Bay</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { overflow: hidden; background: #87CEEB; }
+
+  .scene {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Sky gradient */
+  .sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #4AA8D8 0%, #87CEEB 60%, #B4E4F7 100%);
+  }
+
+  /* Sun */
+  .sun {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    width: 90px;
+    height: 90px;
+    background: #FFE066;
+    border-radius: 50%;
+    box-shadow: 0 0 60px 20px rgba(255,224,102,0.4);
+  }
+
+  /* Clouds */
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.85;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+  .cloud-1 {
+    width: 120px; height: 40px; top: 80px;
+    animation: drift 25s linear infinite;
+  }
+  .cloud-1::before { width: 50px; height: 50px; top: -25px; left: 20px; }
+  .cloud-1::after  { width: 70px; height: 60px; top: -30px; left: 50px; }
+
+  .cloud-2 {
+    width: 160px; height: 50px; top: 160px;
+    animation: drift 35s linear infinite;
+    animation-delay: -10s;
+  }
+  .cloud-2::before { width: 60px; height: 55px; top: -28px; left: 30px; }
+  .cloud-2::after  { width: 80px; height: 65px; top: -32px; left: 70px; }
+
+  .cloud-3 {
+    width: 100px; height: 35px; top: 50px;
+    animation: drift 30s linear infinite;
+    animation-delay: -20s;
+  }
+  .cloud-3::before { width: 45px; height: 45px; top: -22px; left: 15px; }
+  .cloud-3::after  { width: 55px; height: 50px; top: -25px; left: 40px; }
+
+  @keyframes drift {
+    from { left: 110vw; }
+    to   { left: -200px; }
+  }
+
+  /* Ground */
+  .ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, #7BC74D 0%, #5AA83A 100%);
+    border-top: 3px solid #4E9A33;
+  }
+
+  /* Bird container — horizontal flight path */
+  .bird-wrap {
+    position: absolute;
+    top: 200px;
+    animation: flyAcross 12s ease-in-out infinite;
+    /* start off-screen left */
+    left: -180px;
+  }
+  @keyframes flyAcross {
+    0%   { left: -180px; top: 200px; }
+    25%  { top: 140px; }
+    50%  { top: 180px; }
+    75%  { top: 120px; }
+    100% { left: calc(100vw + 50px); top: 160px; }
+  }
+
+  /* Bird bob (up-down while flying) */
+  .bird {
+    animation: bob 0.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes bob {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-8px); }
+  }
+
+  /* Wing flap — left wing (front) */
+  .wing-left {
+    animation: flapLeft 0.3s ease-in-out infinite;
+    transform-origin: 75px 95px;
+  }
+  @keyframes flapLeft {
+    0%,100% { transform: rotate(0deg); }
+    50%     { transform: rotate(-30deg) translateY(-6px); }
+  }
+
+  /* Wing flap — right wing (back) */
+  .wing-right {
+    animation: flapRight 0.3s ease-in-out infinite;
+    transform-origin: 75px 95px;
+  }
+  @keyframes flapRight {
+    0%,100% { transform: rotate(0deg); }
+    50%     { transform: rotate(25deg) translateY(-4px); }
+  }
+
+  /* Tail sway */
+  .tail {
+    animation: tailSway 0.6s ease-in-out infinite;
+    transform-origin: 60px 130px;
+  }
+  @keyframes tailSway {
+    0%,100% { transform: rotate(0deg); }
+    50%     { transform: rotate(8deg); }
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="sky"></div>
+  <div class="sun"></div>
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <div class="cloud cloud-3"></div>
+  <div class="ground"></div>
+
+  <!-- Flying bird -->
+  <div class="bird-wrap">
+    <svg class="bird" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tail (purple/lavender feathers) -->
+      <g class="tail">
+        <ellipse cx="50" cy="140" rx="18" ry="30" fill="#9B7EC8" transform="rotate(-15 50 140)"/>
+        <ellipse cx="38" cy="138" rx="16" ry="28" fill="#B09AD8" transform="rotate(-25 38 138)"/>
+        <ellipse cx="58" cy="142" rx="14" ry="26" fill="#C4ADEA" transform="rotate(-5 58 142)"/>
+      </g>
+
+      <!-- Feet (purple) -->
+      <line x1="95" y1="155" x2="90" y2="180" stroke="#9B7EC8" stroke-width="3" stroke-linecap="round"/>
+      <line x1="105" y1="155" x2="110" y2="180" stroke="#9B7EC8" stroke-width="3" stroke-linecap="round"/>
+      <line x1="85" y1="178" x2="95" y2="182" stroke="#9B7EC8" stroke-width="3" stroke-linecap="round"/>
+      <line x1="105" y1="178" x2="115" y2="182" stroke="#9B7EC8" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Body (white, round) -->
+      <ellipse cx="100" cy="110" rx="55" ry="50" fill="white" stroke="#E8E8E8" stroke-width="1"/>
+
+      <!-- Right wing (behind body) -->
+      <g class="wing-right">
+        <path d="M 85 95 Q 130 60 155 80 Q 140 90 130 95 Q 120 88 110 95 Q 100 90 85 95 Z"
+              fill="#F0F0F0" stroke="#E0E0E0" stroke-width="0.5"/>
+      </g>
+
+      <!-- Left wing (in front) -->
+      <g class="wing-left">
+        <path d="M 85 95 Q 130 55 160 75 Q 145 87 135 92 Q 125 84 115 92 Q 105 86 85 95 Z"
+              fill="white" stroke="#E0E0E0" stroke-width="0.5"/>
+      </g>
+
+      <!-- Cheek (pink) -->
+      <circle cx="85" cy="115" r="12" fill="#F5A0B0"/>
+
+      <!-- Eye -->
+      <circle cx="88" cy="100" r="14" fill="#4A3520"/>
+      <circle cx="91" cy="97" r="6" fill="white"/>
+      <circle cx="93" cy="94" r="2.5" fill="white" opacity="0.7"/>
+
+      <!-- Beak (small, curved) -->
+      <path d="M 62 108 Q 58 104 55 106 Q 57 110 62 112 Z" fill="#D4896A"/>
+      <path d="M 62 112 Q 57 112 55 110" stroke="#C07050" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+</div>
+</body>
+</html>
