@@ -1,0 +1,92 @@
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+/* .box1{
+  background-color: green;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end:3 ;
+}
+.box2{
+  background-color: skyblue;
+    grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end:2 ;
+}
+.box3{
+  background-color: pink;
+   grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end:4 ;
+}
+.box4{
+  background-color: orange;
+   grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end:4;
+}
+.box5{
+  background-color: gray;
+   grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end:3 ;
+}
+.box6{
+  background-color: brown;
+   grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end:4 ;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(5,100px);
+  grid-template-rows: repeat(3,100px);
+  gap:15px;
+  background-color: aqua;
+  display: inline-grid;
+} */
+.box1{
+  background-color: green;
+grid-area: box1;
+}
+.box2{
+  background-color: skyblue;
+ grid-area: box2;
+}
+.box3{
+  background-color: pink;
+  grid-area: box3;
+}
+.box4{
+  background-color: orange;
+    grid-area: box4;
+}
+.box5{
+  background-color: gray;
+ grid-area: box5;
+}
+.box6{
+  background-color: brown;
+   grid-area: box6;
+}
+.container{
+  grid-template-columns: repeat(5,100px);
+  grid-template-rows: repeat(3,100px);
+  gap:15px;
+  background-color: aqua;
+  display: inline-grid;
+  grid-template-areas:
+  "box1 box1 box2 box2 box2"
+  "box1 box1 box4 box4 box5"
+    "box3 box3 box4 box4 box6"
+
+}
