@@ -1,0 +1,24 @@
+body{
+  background-color: black;
+}
+.header{
+  color:white;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 50px;
+  position: relative;
+}
+.header::before{
+  position: absolute;
+  content: "";
+  display: block;
+  top:0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  rotate: 5deg;
+  padding: 200px;
+  transform: translate(-5%,-30%);
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}

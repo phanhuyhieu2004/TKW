@@ -1,0 +1,12 @@
+.box_parent{
+  background-color:pink;
+  height:250px;
+  display:flex;
+  flex-direction:column;
+  margin-top:50px
+}
+.box_child{
+  background-color:blue;
+  width:50%;
+  margin-top:70px
+}

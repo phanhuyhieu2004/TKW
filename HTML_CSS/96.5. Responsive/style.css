@@ -1,0 +1,10 @@
+.blog{
+  background-color: cyan;
+}
+.blog{
+  /* width: min(800px,100%); */
+    /* width: max(800px,100%); */
+    width: clamp(300px,100%,1170px);
+    font-size: clamp(18px,2vw, 24px);
+
+}

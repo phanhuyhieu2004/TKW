@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box1,.box4,.box5{
+      background: aqua;
+    }
+    .box2,.box3{
+      background: blue;
+    }
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      display: grid;
+      grid-template-columns: 100px 200px;
+      grid-template-rows: 50px 100px 200px;
+      /*align-items: stretch;*/
+      /*align-items: center;*/
+      /*align-items: end;*/
+      /*justify-items: center;*/
+      /*justify-items: flex-end;*/
+      /*align-content: center;*/
+      /*align-content: space-between;*/
+      /*align-content: space-around;*/
+      /*justify-content: center;*/
+      /*justify-content: space-between;*/
+      justify-content: end;
+      height: 100vh;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="box box1">Item 1</div>
+  <div class="box box2">Item 2</div>
+  <div class="box box3">Item 3</div>
+  <div class="box box4">Item 4</div>
+  <div class="box box5">Item 5</div>
+</div>
+
+</body>
+</html>

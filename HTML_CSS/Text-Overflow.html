@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    h1{
+      width: 200px;
+      background: pink;
+      /*không xuống dòng*/
+      white-space: nowrap;
+      /*ẩn phần thừa*/
+      overflow: hidden;
+      /*thêm 3 chấm nếu text bị tràn ra ngoài*/
+      text-overflow: ellipsis;
+    }
+    /*h1:hover{*/
+    /*  overflow: visible;*/
+    /*}*/
+    /*làm dấu 3 chấm ở các dòng bất kỳ*/
+    h2{
+      background: aquamarine;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+    }
+  </style>
+</head>
+<body>
+<h1>inimicus antiopam porro has expetenda invidunt posidonium finibus tacimates interdum antiopam porro has expetenda invidunt posidonium finibus tacimates interdum</h1>
+<h2>eam nominavi minim option utroque elit posse nostrum tempor eam nominavi minim option utroque elinavi minim option utroque elit posse nostrum tempor eam nominavi minim option utroque elinavi minim option utroque elit posse nostrum tempor eam nominavi minim option utroque elit posse nostrum tempor expetendiseam nominavi minim option utroque elit posse nostrum tempor expetendis</h2>
+</body>
+</html>

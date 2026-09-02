@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Pseudo Element Demo</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #111;
+    color: white;
+    padding: 40px;
+  }
+
+  .box {
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 1px solid #555;
+
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: #00f2fe;
+  }
+
+  /* =========================
+     CASE 1: INLINE (trái/phải)
+  ========================= */
+  .case-1::before {
+    content: "👉 ";
+    color: yellow;
+  }
+
+  .case-1::after {
+    content: " ⭕";
+    color: cyan;
+  }
+
+  /* =========================
+     CASE 2: BLOCK (trên/dưới)
+  ========================= */
+  .case-2::before,
+  .case-2::after {
+    display: block;
+  }
+
+  .case-2::before {
+    content: "👉 BEFORE";
+    color: yellow;
+  }
+
+  .case-2::after {
+    content: "⭕ AFTER";
+    color: cyan;
+  }
+
+  /* =========================
+     CASE 3: ABSOLUTE (không top/left)
+  ========================= */
+  .case-3 {
+    position: relative;
+  }
+
+  .case-3::after {
+    content: "⭕";
+    position: absolute;
+    color: cyan;
+    font-size: 30px;
+  }
+
+  /* =========================
+     CASE 4: ABSOLUTE CENTER
+  ========================= */
+  .case-4 {
+    position: relative;
+    height: 150px;
+    background: #222;
+  }
+
+  .case-4::after {
+    content: "⭕";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    font-size: 40px;
+    color: cyan;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>CASE 1: Inline → trái / phải</h2>
+    <div class="case-1">Loading</div>
+  </div>
+
+  <div class="box">
+    <h2>CASE 2: Block → trên / dưới</h2>
+    <div class="case-2">Loading</div>
+  </div>
+
+  <div class="box">
+    <h2>CASE 3: Absolute (không top/left)</h2>
+    <div class="case-3">Loading</div>
+  </div>
+
+  <div class="box">
+    <h2>CASE 4: Absolute + center</h2>
+    <div class="case-4">Loading</div>
+  </div>
+<span class="test">Hello</span>
+</body>
+</html>

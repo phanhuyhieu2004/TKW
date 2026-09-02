@@ -1,0 +1,6 @@
+input:placeholder-shown{
+background-color: cyan;
+}
+input:not(:placeholder-shown){
+background-color: yellow;
+}

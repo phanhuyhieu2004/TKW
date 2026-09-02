@@ -1,0 +1,9 @@
+.btn-icon{
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}

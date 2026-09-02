@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    :root {
+      --white: #ffffff;
+      --off-white: #322c2c;
+      --transp-white-1: rgba(255, 255, 255, 0.25);
+      --transp-white-2: rgba(255, 255, 255, 0.1);
+      --blue-1: #62b8f5;
+      --blue-2: #4475ef;
+      --shadow: rgba(3, 46, 87, 0.2);
+    }
+    body {
+      height: 100vh;
+      background-color: #0093E9;
+      background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
+    .wrapper {
+      font-size: 16px;
+      width: 90vw;
+      max-width: 28em;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+    .container {
+      width: 100%;
+      background: var(--transp-white-2);
+      backdrop-filter: blur(10px);
+      padding: 3em 1.8em;
+      border: 2px solid var(--transp-white-2);
+      border-radius: 0.6em;
+      box-shadow: 0 1.8em 3.7em var(--shadow);
+      text-align: center;
+    }
+    .shape {
+      position: absolute;
+
+      border-radius: 50%;
+    }
+    .shape-1 {
+      background: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/sun-unscreen.gif?raw=true");
+
+      height: 13em;
+      width: 13em;
+      right: -6.5em;
+      top: 1.8em;
+    }
+    .shape-2 {
+      background-image: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/cloudy-unscreen.gif?raw=true");
+      height: 11em;
+      width: 11em;
+      bottom: -3.7em;
+      left: -2.5em;
+      background-size: cover;
+      z-index: 1;
+    }
+    .search-container {
+      font-size: 1em;
+      display: grid;
+      grid-template-columns: 9fr 3fr;
+      gap: 1.25em;
+    }
+    .search-container input,
+    .search-container button {
+      outline: none;
+      font-size: 1em;
+      border: none;
+
+    }
+    .search-container input {
+      padding: 0.7em;
+     border-radius: 999px;
+      border-bottom: 2px solid var(--transp-white-1);
+      font-weight: 300;
+    }
+    .search-container input::placeholder {
+      color: var(--off-white);
+    }
+    .search-container input:focus {
+      border-color: var(--white);
+    }
+    .search-container button {
+      color: var(--blue-2);
+      background-color: var(--white);
+      border-radius: 999px;
+    }
+    #result h2 {
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      margin: 1.25em 0;
+    }
+    .weather,
+    .desc {
+      color: var(--off-white);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.9em;
+      font-weight: 500;
+      line-height: 2em;
+    }
+    .weather {
+      margin-top: -0.7em;
+    }
+    #result img {
+      margin: 0.6em 0 0 0;
+      width: 6.2em;
+      filter: drop-shadow(0 1.8em 3.7em var(--shadow));
+    }
+    #result h1 {
+      font-size: 4em;
+      margin: 0.7em 0 0.7em 0;
+      line-height: 0;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .temp-container {
+      display: flex;
+      justify-content: center;
+    }
+    .temp-container div {
+      padding: 0.3em 1em;
+    }
+    .temp-container div:first-child {
+      border-right: 1px solid var(--transp-white-1);
+    }
+    .temp-container .title {
+      font-weight: 600;
+      color: var(--white);
+    }
+    .temp-container .temp {
+      font-weight: 300;
+      color: var(--off-white);
+    }
+    .msg {
+      margin-top: 1.8em;
+      color: var(--white);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    @media screen and (max-width: 450px) {
+      .wrapper {
+        font-size: 14px;
+      }
+    }
+
+    @keyframes icon_scale {
+      from {
+        scale: 0.95;
+      }
+      to {
+        scale: 1.2;
+      }
+
+    }
+    .img-weather{
+      animation: icon_scale 0.5s infinite ;
+    }
+    @media (max-width: 767.98px) {
+      .shape-2 {
+        background-image: url("https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/cloudy-unscreen.gif?raw=true");
+        height: 11em;
+        width: 11em;
+        bottom: -3.7em;
+        left: -0.5em;
+        background-size: cover;
+        z-index: 1;
+      }
+      .wrapper {
+        font-size: 14px;
+        width: 100vw;
+        padding: 0 1em;
+      }
+
+      .search-container {
+        grid-template-columns: 7fr 3fr; /* Hoặc 1fr 1fr nếu bạn muốn chia đều */
+        gap: 0.5em;
+      }
+
+      .search-container input {
+        padding: 0.5em; /* Giảm padding */
+        font-size: 0.9em; /* Giảm font-size */
+      }
+
+      .search-container button {
+        font-size: 0.9em;
+        padding: 0.5em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="shape shape-2"></div>
+  <div class="container">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Enter a city name"
+        id="city"
+        value="hanoi"
+      />
+      <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div id="result"></div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  const key = "284e805be8be5fe99b504122d82b5c3e";
+
+  let result = document.getElementById("result");
+  // nơi thông tin thời tiết sẽ được hiển thị.
+  let searchBtn = document.getElementById("search-btn");
+  // Nút bấm để kích hoạt tìm kiếm thời tiết.
+  let cityRef = document.getElementById("city");
+  // Ô nhập liệu nơi người dùng sẽ nhập tên thành phố.
+  let getWeather = () => {
+    let cityValue = cityRef.value;
+    if (cityValue.length == 0) {
+      result.innerHTML = `<h3 class="msg">Please enter a city name</h3>`;
+    }
+    else {
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
+      cityRef.value = "";
+      fetch(url)
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log(data);
+          console.log(data.weather[0].icon);
+          console.log(data.weather[0].main);
+          console.log(data.weather[0].description);
+          console.log(data.name);
+          console.log(data.main.temp_min);
+          console.log(data.main.temp_max);
+          let iconClass = '';
+          if (data.weather[0].main === 'Clear') {
+            iconClass = 'clear'; // Biểu tượng mặt trời
+          } else if (data.weather[0].main === 'Rain') {
+            iconClass = 'rain'; // Biểu tượng mưa
+          } else if (data.weather[0].main === 'Clouds') {
+            iconClass = 'clouds'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Drizzle') {
+            iconClass = 'drizzle'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Snow') {
+            iconClass = 'snow'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Mist') {
+            iconClass = 'mist'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Smoke') {
+            iconClass = 'wind'; // Biểu tượng mây
+          }else if (data.weather[0].main === 'Haze') {
+            iconClass = 'haze1'; // Biểu tượng mây
+          }
+          result.innerHTML = `
+        <h2>${data.name}</h2>
+        <h4 class="weather">${data.weather[0].main}</h4>
+        <h4 class="desc">${data.weather[0].description}</h4>
+ <img src="https://github.com/phanhuyhieu2004/TKW/blob/TKW-Exercise/images/${iconClass}.png?raw=true" class="img-weather">   <h1>${data.main.temp} &#176;</h1>
+        <div class="temp-container">
+            <div>
+                <h4 class="title">min</h4>
+                <h4 class="temp">${data.main.temp_min}&#176;</h4>
+            </div>
+            <div>
+                <h4 class="title">max</h4>
+                <h4 class="temp">${data.main.temp_max}&#176;</h4>
+            </div>
+        </div>
+        `;
+        })
+        .catch(() => {
+          result.innerHTML = `<h3 class="msg">City not found</h3>`;
+        });
+    }
+  };
+  searchBtn.addEventListener("click", getWeather);
+  window.addEventListener("load", getWeather);
+</script>
+
+
+</body>
+</html>

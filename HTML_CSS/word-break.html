@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .break-all {
+      word-break: break-all;
+      width: 150px;
+      border: 1px solid black;
+    }
+    .break-word {
+      overflow-wrap: break-word;
+      width: 150px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<div class="break-all">
+  ThisIsAReallyLongWordThatWillBreakAtAnyPointToFitTheContainerWidth
+</div>
+<div class="break-word">
+  ThisIsAReallyLongWordThatWillBreakToFitTheContainerWidthWithoutCausingHorizontalScroll
+</div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truyen Plus+ | Gallery Light Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #F9F9F9; /* Màu trắng ngà cao cấp */
+            color: #1A1A1A;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Premium Card ── */
+        .story-card {
+            background: #ffffff;
+            border-radius: 4px; /* Bo nhẹ kiểu tạp chí */
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .story-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .story-image {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: saturate(0.8);
+        }
+
+        .story-card:hover .story-image {
+            transform: scale(1.08);
+            filter: saturate(1.1);
+        }
+
+        /* ── Modern Navigation ── */
+        .nav-link {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #666;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #000;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ── Search Bar (Clean) ── */
+        .search-container {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input {
+            background: transparent;
+            outline: none;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Badge ── */
+        .badge {
+            background: #000;
+            color: #fff;
+            font-size: 8px;
+            padding: 4px 8px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Editorial Style) -->
+    <header class="w-full px-16 py-10 flex justify-between items-center bg-white border-b border-black/[0.03] sticky top-0 z-50">
+        <div class="flex flex-col">
+            <h1 class="text-2xl font-serif font-bold tracking-tighter">Truyen Plus+</h1>
+            <span class="text-[8px] uppercase tracking-[0.3em] text-black/40 mt-1">Digital Literature Gallery</span>
+        </div>
+
+        <nav class="hidden md:flex gap-12">
+            <a href="#" class="nav-link">Editorial</a>
+            <a href="#" class="nav-link">Genre</a>
+            <a href="#" class="nav-link">Archive</a>
+            <a href="#" class="nav-link">Search</a>
+        </nav>
+
+        <div class="flex items-center gap-8">
+            <div class="search-container flex items-center py-1">
+                <input type="text" placeholder="Search keywords..." class="search-input w-40">
+            </div>
+            <button class="text-[10px] uppercase tracking-widest font-bold border-b border-black pb-1">Account</button>
+        </div>
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-16 py-24">
+        
+        <!-- Section Header -->
+        <div class="flex items-baseline gap-6 mb-20">
+            <h2 class="text-5xl font-serif italic">Newly Released</h2>
+            <span class="h-[1px] flex-1 bg-black/10"></span>
+            <a href="#" class="text-[10px] uppercase tracking-[0.2em] font-medium">Browse All</a>
+        </div>
+
+        <!-- Grid (Editorial Style) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            <!-- Story Card 1 -->
+            <div class="story-card group cursor-pointer">
+                <div class="image-container aspect-[3/4.5] relative">
+                    <img src="https://images.unsplash.com/photo-1543002588-bfa7400217eef?w=800" 
+                         class="story-image w-full h-full object-cover" alt="Cover">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge">Trending</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-serif font-bold mb-3">Niệm Tiên Quyết</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[9px] uppercase tracking-widest text-black/40">Thông Vạn Vật</span>
+                        <span class="text-[9px] font-bold">Vol. 12</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Card 2 -->
+            <div class="story-card group cursor-pointer">
+                <div class="image-container aspect-[3/4.5] relative">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800" 
+                         class="story-image w-full h-full object-cover" alt="Cover">
+                    <div class="absolute top-4 right-4">
+                        <span class="badge">Premium</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-serif font-bold mb-3">Đứa Con Tạo Hóa</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[9px] uppercase tracking-widest text-black/40">Ẩn Cư Sĩ</span>
+                        <span class="text-[9px] font-bold">Final</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Card 3 -->
+            <div class="story-card group cursor-pointer">
+                <div class="image-container aspect-[3/4.5] relative">
+                    <img src="https://images.unsplash.com/photo-1511108690759-009324a90311?w=800" 
+                         class="story-image w-full h-full object-cover" alt="Cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-serif font-bold mb-3">Kiếp Phù Dung</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[9px] uppercase tracking-widest text-black/40">Băng Tâm Ngọc</span>
+                        <span class="text-[9px] font-bold">New</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Card 4 -->
+            <div class="story-card group cursor-pointer">
+                <div class="image-container aspect-[3/4.5] relative">
+                    <img src="https://images.unsplash.com/photo-1474932430478-3a7fb9082db4?w=800" 
+                         class="story-image w-full h-full object-cover" alt="Cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-serif font-bold mb-3">Lục Địa Huyền Bí</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[9px] uppercase tracking-widest text-black/40">Đầu Đất</span>
+                        <span class="text-[9px] font-bold">Hot</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-20 border-t border-black/[0.05] text-center">
+        <span class="text-[9px] uppercase tracking-[0.4em] text-black/30">© 2025 Truyen Plus+ Editorial Board</span>
+    </footer>
+
+</body>
+</html>

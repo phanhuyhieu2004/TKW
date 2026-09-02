@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- BEM -->
+    <!--
+Cú pháp BEM:
+        1. block
+        .header, .footer, .card, .card-list...
+        2. element
+        block__element: footer__logo, footer__desc, card__image
+        3. modifier:
+            block__element--modifier: card__image--large, card__image--small
+            block--modifier : .modal--custom, .modal--fullscreen
+     -->
+    <div class="container">
+      <div class="card">
+        <div class="card__image"></div>
+        <div class="card__title"></div>
+        <div class="card__desc"></div>
+        <div class="card__button card__button--primary"></div>
+        <div class="card__button card__button--secondary"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card-list">
+        <div class="card-item">
+          <div class="card-item__image"></div>
+          <div class="card-item__title"></div>
+          <div class="card-item__desc"></div>
+          <div class="card-item__button card-item__button--primary"></div>
+          <div class="card-item__button card-item__button--secondary"></div>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block__element1">
+      </div>
+    </div>
+  </body>
+</html>

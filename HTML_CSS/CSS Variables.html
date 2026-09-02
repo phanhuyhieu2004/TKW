@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Test</title>
+  <style>
+    :root {
+      --box-height: 150px;
+      --box-color: pink;
+      --background-box:red;
+    }
+
+    .box {
+      height: var(--box-height);
+      background: var(--box-color);
+      margin-bottom: 10px;
+    }
+
+    .box1 {
+      height: var(--box-height);
+      background: var(--box-color);
+      margin-bottom: 10px;
+    }
+
+    .box2 {
+      height: var(--box-height);
+      background: var(--box-color);
+
+      margin-bottom: 10px;
+    }
+    .detail{
+      --p_font-size:30px;
+
+    }
+    .detail span{
+      font-size: var(--p_font-size);
+
+    }
+    .box2{
+      height: 300px;
+    }
+
+    .box3{
+      height: 100px;
+      background: var(--background-box,green);
+    }
+  </style>
+</head>
+<body>
+<div class="box">Box</div>
+<div class="box1">Box1</div>
+<div class="box2">Box2</div>
+<div class="box3">Box3</div>
+<p class="detail">Chào mừng đến <span>Hiệu ma</span> hi hi</p>
+</body>
+
+</html>

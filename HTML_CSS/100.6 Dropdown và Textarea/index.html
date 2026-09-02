@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Text area</h2>
+    <form action="">
+      <label for="message">Massage</label>
+      <textarea name="message" id="message" cols="30" rows="10"></textarea>
+      <input type="submit" value="send me" />
+    </form>
+    <h2>dropdown</h2>
+    <form action="">
+      <label for="color">Chọn màu:</label>
+      <br />
+
+      <select name="color" id="color" required>
+        <option value="" selected>-Chọn màu-</option>
+
+        <option value="red">Đỏ</option>
+        <option value="green">Xanh lá</option>
+        <option value="blue">Xanh dương</option>
+      </select>
+      <button>Xác nhận màu</button>
+    </form>
+    <h2>optgroup</h2>
+    <form action="">
+      <label for="color">Chọn màu:</label>
+      <br />
+
+      <select name="color" id="color" required>
+      <optgroup label="Nhom 1">
+          <option value="" selected>-Chọn màu-</option>
+
+        <option value="red">Đỏ</option>
+        <option value="green">Xanh lá</option>
+        <option value="blue">Xanh dương</option>
+      </optgroup>
+      </select>
+      <button>Xác nhận màu</button>
+    </form>
+  </body>
+</html>

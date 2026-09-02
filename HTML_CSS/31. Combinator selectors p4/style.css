@@ -1,0 +1,14 @@
+h1+h2{
+  color:red
+}
+/* .demo.demo2+h3
+,p{
+  color:blue
+} */
+/* dấu phẩy tách thành nhiều selector độc lập */
+h1~h3{
+  color:blue
+}
+div~div{
+  color:green
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: red;
+      color: yellow;
+      margin: 100px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: spin_element 1s linear 1s 3 alternate-reverse;
+      /*animation-name:spin_element ;*/
+      /*animation-duration: 5s;*/
+      /*animation-timing-function: linear;*/
+    }
+
+    @keyframes spin_element {
+      from {
+        rotate: 0;
+      }
+      to {
+        rotate: 360deg;
+      }
+
+    }
+
+    /*.box2 {*/
+    /*  width: 200px;*/
+    /*  height: 200px;*/
+    /*  background: red;*/
+    /*  color: yellow;*/
+    /*  margin: 100px auto;*/
+    /*  display: flex;*/
+    /*  justify-content: center;*/
+    /*  align-items: center;*/
+    /*  animation: move 3s 2s;*/
+    /*  animation-fill-mode: both;*/
+    /*}*/
+
+    .box3 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      color: yellow;
+      margin: 100px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: move-box3 5s infinite;
+
+    }
+
+    @keyframes move-box3 {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(-100px, 0);
+      }
+      50% {
+        transform: translate(-100px, -100px);
+      }
+      75% {
+        transform: translate(0, -100px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+
+    }
+
+    /*@keyframes move {*/
+    /*  from {*/
+    /*    transform: translateX(100px);*/
+    /*  }*/
+    /*  to {*/
+    /*    transform: translateX(300px);*/
+    /*  }*/
+    /*}*/
+  </style>
+</head>
+<body>
+<!--<div class="box">Tự học cc</div>-->
+<!--<div class="box2">Tự học cc</div>-->
+<div class="box3">Tự học cc</div>
+</body>
+</html>

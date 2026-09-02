@@ -1,0 +1,23 @@
+.btn {
+  width: 200px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  /* transition: 1s; */
+  /* transition-duration: 2s;
+  transition-property: background-color,color/ALL;
+  transition-delay: 3s/0S;
+  transition-timing-function: ease; */
+  /* transition:all ease-in 1s 3s ; */
+  /* transition: color 1s 3s ease-in,background 1s 3s ease-in */
+  transition: 0.5s;
+}
+.btn:hover {
+  background-color: red;
+  color: yellow;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}

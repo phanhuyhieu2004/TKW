@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="item1" class="cart__item">Giỏ hàng 1 <button onclick="removeItem(this)">Xóa</button></div>
+<div id="item2" class="cart__item">Giỏ hàng 2 <button onclick="removeItem(this)">Xóa</button></div>
+<div id="item3" class="cart__item">Giỏ hàng 3 <button onclick="removeItem(this)">Xóa</button></div>
+<script>
+  function removeItem(button) {
+    // Lấy phần tử cha (div.cart__item)
+    const cartItem = button.parentElement;
+
+    // Xóa phần tử khỏi DOM
+    cartItem.remove();
+  }
+</script>
+</body>
+</html>

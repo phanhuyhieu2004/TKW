@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Example</title>
+</head>
+<body>
+<button id="myButton">Click me</button>
+
+<script>
+  // Lấy phần tử button
+  const button = document.getElementById('myButton');
+
+  // Đăng ký sự kiện click cho button
+  button.addEventListener('click', function(event) {
+    // event là đối tượng sự kiện
+    console.log('Button clicked!');
+    console.log('Event type:', event.type); // "click"
+    console.log('Event target:', event.target); // Phần tử button
+    event.preventDefault(); // Ngăn chặn hành vi mặc định (nếu có)
+  });
+</script>
+</body>
+</html>

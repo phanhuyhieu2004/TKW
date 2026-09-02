@@ -1,0 +1,31 @@
+/* .parent{
+  width:80vw;
+  height:80vh;
+  background-color: lightblue;
+
+}
+.child{
+  width:50vw;
+  height:50vh;
+  background-color: yellow;
+} */
+ /* .parent{ */
+  /* font-size:20px; */
+  /* font-size:2em;
+ }
+.child{
+  width:10em;
+  height:10em; */
+
+  /* font-size:10px; */
+  /* background-color: lightblue;
+} */
+.parent{
+  font-size:10px;
+}
+.child{
+  font-size:2em;
+  width:2em;
+  height:2em;
+  background-color: lightblue;
+}

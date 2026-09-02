@@ -1,0 +1,14 @@
+a,h3 {
+  color: green;
+}
+h2{
+  /*opacity: 100%;*/
+  display: none;
+  /*visibility: hidden;*/
+  background: red;
+}
+body{
+  background-image: url("img/hinh-dep.jpg");
+}
+
+

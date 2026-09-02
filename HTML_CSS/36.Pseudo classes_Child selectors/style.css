@@ -1,0 +1,19 @@
+/* p:first-child{
+  color:red
+}
+p:last-child{
+  color:blue;
+  font-size:35px
+}
+p:nth-child(2){
+  color:pink
+} */
+/* p:nth-child(3n+1){
+  color:green
+} */
+/* p:nth-last-child(odd){
+  color:orange
+} */
+p:only-child{
+  color:gold
+}

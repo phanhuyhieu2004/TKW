@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8" />
+    <title>Title</title>
+<!--    <link rel="stylesheet"href="media.css">-->
+    <style>
+      .box {
+        background: blue;
+        width: 300px;
+        height: 300px;
+      }
+/*tối đa kt viewport width là 600px thì áp dụng style trong ngoặc*/
+      @media (max-width: 600px) , (min-width: 1000px) {
+        .box {
+          background: red;
+          width: 200px;
+          height: 200px;
+        }
+      }
+      @media (orientation: landscape) {
+        .box {
+          background: red;
+          width: 200px;
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>Tự học</p>
+    </div>
+  </body>
+</html>

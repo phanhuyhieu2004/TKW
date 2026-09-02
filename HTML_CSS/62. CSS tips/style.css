@@ -1,0 +1,10 @@
+p{
+  /* letter-spacing: -3px */
+  /* word-spacing: 5px; */
+  /* text-align:justify; */
+  text-align: center;
+}
+.home{
+  text-align: center;
+  display: block;
+}

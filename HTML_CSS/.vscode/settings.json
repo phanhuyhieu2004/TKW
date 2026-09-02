@@ -1,0 +1,11 @@
+{
+  // Extension: CSS Px to Rem (mã: px-to-rem.px-to-rem - do Vlad Serykh)
+  // Root font size của dự án: bạn đang để html { font-size: 100% } => 1rem = 16px
+  "px-to-rem.assumeRootFontSize": 16,
+
+  // Hiển thị tooltip khi hover chuột lên giá trị px
+  "px-to-rem.viewIndicator": true,
+
+  // Chỉ hoạt động với các file CSS/SCSS/LESS
+  "px-to-rem.selectors": ["css", "scss", "less"]
+}

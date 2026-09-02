@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flex Grow Demo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.header{
+    width:1000px;
+    height:80px;
+    display:flex;
+    border:2px solid black;
+}
+
+.logo{
+    width:150px;
+    background:#4CAF50;
+    flex-grow:1
+}
+
+.menu{
+    flex-grow:2;
+    background:#2196F3;
+}
+
+.user{
+    width:100px;
+    background:#FF9800;
+    flex-grow:2
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">Logo</div>
+    <div class="menu">Menu</div>
+    <div class="user">Avatar</div>
+</div>
+
+</body>
+</html>

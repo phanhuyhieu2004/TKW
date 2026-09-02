@@ -1,0 +1,19 @@
+.box{
+  height:400px;
+  width: 200px;
+  border:4px dotted red;
+  background-image: url('e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.webp');
+  /* background-image: none; */
+  /* background-repeat: no-repeat; */
+  /* background-repeat: repeat-x;
+  background-repeat: repeat-y; */
+  /* background-size: contain; */
+  /* background-size: 100% 100%; */
+  background-position: top right;
+    background-position: top left;
+    background-position: bottom left;
+background-position: center;
+background-position: 100% 100%;
+background-repeat: no-repeat;
+
+}

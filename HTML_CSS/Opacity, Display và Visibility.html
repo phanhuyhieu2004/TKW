@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 24. CSS cho người mới - Opacity, Display và Visibility giải thích đơn giản </title>
+  <style>
+/* h2{
+  /* opacity: 0; */
+  /* display: none; */
+  /* visibility: hidden;
+}
+span{
+  visibility: visible;
+} */
+/* body{
+  background-image: url('./images/search.png');
+} */
+ input:checked ~ img{
+  opacity: 0;
+  /* biến mất khỏi giao diện không chiếm kg */
+  /* display: none; */
+  /* biến mất khỏi giao diện vẫn chiếm vị trí */
+  visibility: hidden;
+ }
+ img{
+  transition: 1.5s;
+ }
+  </style>
+</head>
+<body>
+<h1>Tuổi trẻ</h1>
+<h2>Tiền <span>k có</span></h2>
+<h3>Quan hệ chưa có</h3>
+<h3>Tự tin cũng k có</h3>
+<h3>Điều gì cũng k có</h3>
+<h1>opacity-display-visibility</h1>
+    <input type="checkbox"> Click vào em đi đừng sợ <br>
+    <img src="./img/logo.png" alt="tuhoc.cc">
+    <p>Nội dung phía sau của trang</p>
+    <p>Có 2 thứ bạn nên tiết kiệm, đó là sức khỏe và lời hứa.</p>
+    <p>Có 2 thứ bạn phải cho đi, đó là tri thức và lòng tốt.</p>
+    <p>Có 2 thứ bạn phải thay đổi, đó là bản thân và nhận thức.</p>
+</body>
+</html>
+

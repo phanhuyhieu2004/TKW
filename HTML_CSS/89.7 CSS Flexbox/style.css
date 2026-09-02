@@ -1,0 +1,22 @@
+.container{
+  height:150px;
+  display: flex;
+  background-color: cyan;
+  /* flex-wrap: wrap; */
+  /* align-items: flex-start; */
+}
+.box{
+  background-color: blue;
+  border:1px solid black;
+
+
+}
+/* .box1{
+  align-self: center;
+} */
+.box1,.box3{
+  flex-grow: 1;
+}
+.box2{
+  flex-grow: 2;
+}

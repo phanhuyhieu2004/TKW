@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>flex:auto</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    padding:40px;
+    font-family:Arial;
+}
+
+.container{
+    width:900px;
+    height:100px;
+    display:flex;
+    border:3px solid black;
+}
+
+.box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.box1{
+    width:100px;
+    flex:auto;
+    background:#ff7675;
+}
+
+.box2{
+    width:300px;
+    flex:auto;
+    background:#55efc4;
+}
+
+.box3{
+    width:200px;
+    flex:auto;
+    background:#ffeaa7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box box1">100</div>
+
+    <div class="box box2">300</div>
+
+    <div class="box box3">200</div>
+
+</div>
+
+</body>
+</html>

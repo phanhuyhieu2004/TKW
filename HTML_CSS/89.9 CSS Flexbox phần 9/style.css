@@ -1,0 +1,29 @@
+.box1{
+  background-color: cyan;
+}
+.box2{
+  background-color: blue;
+  order:1
+}
+.box3{
+  background-color: red;
+  order:2
+}
+.box4{
+  background-color: yellow;
+}
+
+.container{
+  display: flex;
+}
+.box{
+  /* width: 100px; */
+  /* flex-basis: 100px; */
+  /* max-width: 200px; */
+  /* min-width: 200px; */
+  flex-grow: 0;
+  flex-shrink:1;
+  flex-basis: 100px;
+  flex:1 1 100px;
+  flex:1
+}

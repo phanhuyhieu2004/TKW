@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 15px;
+    }
+
+    .navbar .logo {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .menu-icon {
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      display: none; /* Ẩn icon menu khi màn hình lớn */
+    }
+
+    /* Checkbox để trigger mở menu */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Khi ở màn hình nhỏ hơn 768px */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+      }
+
+      .menu-icon {
+        display: block; /* Hiển thị icon menu khi màn hình nhỏ */
+      }
+
+      /* Hiển thị menu khi checkbox được chọn */
+      #menu-toggle:checked + .nav-links {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 20px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">My Website</div>
+
+  <!-- Checkbox để trigger mở menu -->
+  <input type="checkbox" id="menu-toggle">
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <!-- Icon menu -->
+  <label for="menu-toggle" class="menu-icon">
+    &#9776;
+  </label>
+</nav>
+</body>
+</html>
